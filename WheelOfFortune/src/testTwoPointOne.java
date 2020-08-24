@@ -137,68 +137,6 @@ public class testTwoPointOne extends javax.swing.JFrame {
         txtEndResult.setText(strEndResult);
     }
     
-    //method to get first letter input from user and changing it to caps
-    public static void iChange(String guess) {
-        guess = guess.toUpperCase(); //changes what user enters to all uppercase
-        guessL = guess.charAt(0); //assigns only the first letter of what the user enters as value for variable
-    }
-
-    //method to check if the letter has already beeen guessed before 
-    public static boolean validateC(String phrase, char guessL, char[] alphabet, boolean[] enter, char[] phraseS) {
-        tof = false; //resets variable to false
-        for (int i = 0; i < 26; i++) { //for loop
-            if (guessL == alphabet[i]) { //matches the letter guessed to the alphabet array
-                if (enter[i]) { //if the index is true
-                    tof = true; //variable becomes true
-                }
-            }
-        }
-        return tof; //returns value of tof
-    }
-
-    //method to check if guess is a consonant
-    public static boolean checkVowel(char guessL) {
-        boolean check;
-        if (guessL == 'A' || guessL == 'E' || guessL == 'I' || guessL == 'O' || guessL == 'U') {
-            check = true;
-        } else {
-            check = false;
-        }
-        return check;
-    }
-
-    //method to record the guessed letters
-    public static void record(char guessL, boolean[] enter, char[] alphabet) {
-        for (int i = 0; i < 26; i++) { //for loop
-            if (guessL == alphabet[i]) { //matches the letter guessed to the alphabet array
-                enter[i] = true; //changes enter array to true; all marked trues are the letters that have been guessed already
-            }
-        }
-    }
-
-    //method to check if the letter guessed is on the gameboard
-    public static void gameBoard(String phrase, char[] phraseC, char[] phraseS, char guessL, int[] spinner, int rngSpin) {
-        numberC = 0; //assigning value to variable
-        for (int i = 0; i < phrase.length(); i++) { //for loop
-            if (guessL == phraseC[i]) { //condition, if met, proceed
-                phraseS[i] = guessL; //changes the gameboard to reveal guessed letter
-                numberC++; //counts number of times the guessed letter appears in the phrase
-            }
-        }
-    }
-
-    //method to start a new round if user decides to finish the board by keep guessing letters
-    public static boolean boardFinish(String phrase, char[] phraseS) {
-        boolean boardF = false; //resets variable value to false
-        board = String.copyValueOf(phraseS); //concats all values in char array and assigns it as value for string variable
-        if (board.equalsIgnoreCase(phrase)) { //condition, if met, proceed
-            System.out.println("The board is now revealed"); //print this
-            System.out.println("A new round will now begin"); //print this
-            boardF = true; //sets variable as true
-        }
-        return boardF; //returns value of variable
-    }
-
     public void userPlay() {
         UserMoney.setText(Integer.toString(userTotal));
         CompMoney.setText(Integer.toString(computerTotal));
@@ -261,7 +199,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
                     char[] vowels = {'A', 'E', 'I', 'O', 'U'};
                     char vowel = vowels[rngVowel];
                     display = "The computer chose to buy a vowel. \n It wishes to buy: " + vowel + "\n";
-                    tof = validateC(phrase, vowel, alphabet, enter, phraseS);
+                    tof = Methods.validateC(phrase, vowel, alphabet, enter, phraseS);
                     if (tof) { //condition, if tof is true, proceed
                         display = display + "That letter has already been guessed. \n The Computer lost its turn \n\n Your turn!";
                         int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
@@ -269,14 +207,14 @@ public class testTwoPointOne extends javax.swing.JFrame {
                             userPlay();
                         }
                     } else {
-                        record(vowel, enter, alphabet); //uses record method
-                        gameBoard(phrase, phraseC, phraseS, vowel, spinner, rngSpin);
+                        Methods.record(vowel, enter, alphabet); //uses record method
+                        Methods.gameBoard(phrase, phraseC, phraseS, vowel, spinner, rngSpin);
 
                         if (numberC > 0) { //condition, if met, proceed
                             display = display + "There are " + numberC + " of those letters!";
                             int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                             if (n == 0) {
-                                if (boardFinish(phrase, phraseS)) {
+                                if (Methods.boardFinish(phrase, phraseS)) {
                                     int x = JOptionPane.showOptionDialog(null, "Game Over", null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                                     if (x == 0) {
                                         //go to end game screen
@@ -307,7 +245,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
                     char guessC = consonant[rngAlpha];
                     display = display + "The Computer guesses: " + guessC + "\n";
 
-                    tof = validateC(phrase, guessC, alphabet, enter, phraseS); //stores return value of validateC method as value for variable
+                    tof = Methods.validateC(phrase, guessC, alphabet, enter, phraseS); //stores return value of validateC method as value for variable
                     if (tof) { //condition, if tof is true, proceed
                         display = display + "That letter has already been guessed. \n The Computer lost its turn \n\n Your turn!";
                         int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
@@ -315,8 +253,8 @@ public class testTwoPointOne extends javax.swing.JFrame {
                             userPlay();
                         }
                     } else {
-                        record(guessC, enter, alphabet); //uses record method
-                        gameBoard(phrase, phraseC, phraseS, guessC, spinner, rngSpin);
+                        Methods.record(guessC, enter, alphabet); //uses record method
+                        Methods.gameBoard(phrase, phraseC, phraseS, guessC, spinner, rngSpin);
 
                         if (numberC > 0) { //condition, if met, proceed
                             gain = numberC * spinner[rngSpin];
@@ -325,7 +263,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
                             if (n == 0) {
                                 computerTotal = computerTotal + gain;
                                 CompMoney.setText(Integer.toString(computerTotal));
-                                if (boardFinish(phrase, phraseS)) {
+                                if (Methods.boardFinish(phrase, phraseS)) {
                                     int x = JOptionPane.showOptionDialog(null, "Game Over", null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                                     if (x == 0) {
                                         //go to end game screen
@@ -427,6 +365,8 @@ public class testTwoPointOne extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         pnlStart.setBackground(new java.awt.Color(234, 234, 255));
+        pnlStart.setMaximumSize(new java.awt.Dimension(601, 273));
+        pnlStart.setPreferredSize(new java.awt.Dimension(601, 273));
 
         lblTitle.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(255, 255, 0));
@@ -450,7 +390,8 @@ public class testTwoPointOne extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\!!!ICS4U\\Unit 1 (final)\\Wheel-Of-Fortune-ICS4U\\WheelOfFortune\\Spinner.gif")); // NOI18N
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel7.setPreferredSize(new java.awt.Dimension(200, 200));
 
         jLabel8.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
@@ -463,18 +404,8 @@ public class testTwoPointOne extends javax.swing.JFrame {
         pnlStart.setLayout(pnlStartLayout);
         pnlStartLayout.setHorizontalGroup(
             pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStartLayout.createSequentialGroup()
-                .addGap(298, 298, 298)
-                .addComponent(btnPlay)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnInstructions)
-                .addGap(294, 294, 294))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStartLayout.createSequentialGroup()
-                .addContainerGap(284, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(251, 251, 251))
             .addGroup(pnlStartLayout.createSequentialGroup()
-                .addGap(420, 420, 420)
+                .addGap(247, 247, 247)
                 .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlStartLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
@@ -482,25 +413,34 @@ public class testTwoPointOne extends javax.swing.JFrame {
                     .addGroup(pnlStartLayout.createSequentialGroup()
                         .addGap(101, 101, 101)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblTitle))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblTitle)
+                    .addGroup(pnlStartLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlStartLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(btnPlay)
+                                .addGap(29, 29, 29)
+                                .addComponent(btnInstructions)))))
+                .addContainerGap(251, Short.MAX_VALUE))
         );
         pnlStartLayout.setVerticalGroup(
             pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStartLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(35, 35, 35)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInstructions)
                     .addComponent(btnPlay))
-                .addGap(58, 58, 58))
+                .addGap(146, 146, 146))
         );
 
         pnlInstructions.setBackground(new java.awt.Color(204, 204, 255));
@@ -538,7 +478,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+            .addComponent(jLabel3)
         );
 
         javax.swing.GroupLayout pnlInstructionsLayout = new javax.swing.GroupLayout(pnlInstructions);
@@ -919,14 +859,14 @@ public class testTwoPointOne extends javax.swing.JFrame {
         Guess.setEditable(false);
         Submit.setEnabled(false);
 
-        iChange(guess);
+        Methods.iChange(guess);
 
         if (type == 1) {
-            tof = validateC(phrase, guessL, alphabet, enter, phraseS); //assigns return value of validateC method as value for variable
+            tof = Methods.validateC(phrase, guessL, alphabet, enter, phraseS); //assigns return value of validateC method as value for variable
             userTotal = userTotal - 250;
             UserMoney.setText(Integer.toString(userTotal));
 
-            if (checkVowel(guessL) == false) {
+            if (Methods.checkVowel(guessL) == false) {
                 Instructions.setText("That is not a vowel! You lost your turn..");
                 computer();
             } else if (tof) { //condition, if met, proceed
@@ -934,15 +874,15 @@ public class testTwoPointOne extends javax.swing.JFrame {
                 Instructions.setText("That letter has already been guessed");
                 computer();
             } else {
-                record(guessL, enter, alphabet); //uses record method
-                gameBoard(phrase, phraseC, phraseS, guessL, spinner, rngSpin); //uses gameboard method
+                Methods.record(guessL, enter, alphabet); //uses record method
+                Methods.gameBoard(phrase, phraseC, phraseS, guessL, spinner, rngSpin); //uses gameboard method
 
                 if (numberC > 0) { //condition, if met, proceed
                     System.out.println("Congrats, there are " + numberC + " of those letters!"); //Print this
                     display = "Congrats, there are " + numberC + " of those letters!";
                     int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                     if (n == 0) {
-                        if (boardFinish(phrase, phraseS)) {
+                        if (Methods.boardFinish(phrase, phraseS)) {
                             int x = JOptionPane.showOptionDialog(null, "Game Over", null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                             if (x == 0) {
                                 //go to end game screen
@@ -967,9 +907,9 @@ public class testTwoPointOne extends javax.swing.JFrame {
                 }
             }
         } else if (type == 2) {
-            tof = validateC(phrase, guessL, alphabet, enter, phraseS); //assigns return value of validateC method as value for variable
+            tof = Methods.validateC(phrase, guessL, alphabet, enter, phraseS); //assigns return value of validateC method as value for variable
 
-            if (checkVowel(guessL)) {
+            if (Methods.checkVowel(guessL)) {
                 Instructions.setText("That is not a consonant! You lost your turn..");
                 computer();
             } else if (tof) { //condition, if met, proceed
@@ -977,8 +917,8 @@ public class testTwoPointOne extends javax.swing.JFrame {
                 Instructions.setText("That letter has already been guessed");
                 computer();
             } else {
-                record(guessL, enter, alphabet); //uses record method
-                gameBoard(phrase, phraseC, phraseS, guessL, spinner, rngSpin); //uses gameboard method
+                Methods.record(guessL, enter, alphabet); //uses record method
+                Methods.gameBoard(phrase, phraseC, phraseS, guessL, spinner, rngSpin); //uses gameboard method
                 if (numberC > 0) { //condition, if met, proceed
                     System.out.println("Congrats, there are " + numberC + " of those letters!"); //Print this
                     gain = numberC * spinner[rngSpin]; //value assignment to variable
@@ -987,7 +927,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
                     if (n == 0) {
                         userTotal = userTotal + gain;
                         UserMoney.setText(Integer.toString(userTotal));
-                        if (boardFinish(phrase, phraseS)) {
+                        if (Methods.boardFinish(phrase, phraseS)) {
                             int x = JOptionPane.showOptionDialog(null, "Game Over", null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                             if (x == 0) {
                                 //go to end game screen

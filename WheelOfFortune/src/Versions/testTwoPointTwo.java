@@ -1,3 +1,5 @@
+package Versions;
+
 
 import javax.swing.JOptionPane;
 import java.util.Random; //importing RNG method
@@ -416,7 +418,6 @@ public class testTwoPointTwo extends javax.swing.JFrame {
 
         lblTitle.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(255, 255, 0));
-        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/wheeloffortune.png"))); // NOI18N
 
         btnPlay.setBackground(new java.awt.Color(204, 153, 0));
         btnPlay.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 18)); // NOI18N
@@ -442,9 +443,6 @@ public class testTwoPointTwo extends javax.swing.JFrame {
 
         lblWelcome.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         lblWelcome.setForeground(new java.awt.Color(153, 51, 0));
-        lblWelcome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/welcometo.png"))); // NOI18N
-
-        lblCourseCode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICS4U.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlStartLayout = new javax.swing.GroupLayout(pnlStart);
         pnlStart.setLayout(pnlStartLayout);
@@ -532,8 +530,6 @@ public class testTwoPointTwo extends javax.swing.JFrame {
                 btnReturnMainMenuActionPerformed(evt);
             }
         });
-
-        lblInstructions.setIcon(new javax.swing.ImageIcon(getClass().getResource("/instructions.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlInstructionsLayout = new javax.swing.GroupLayout(pnlInstructions);
         pnlInstructions.setLayout(pnlInstructionsLayout);
@@ -788,7 +784,6 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         });
 
         lblGameResults.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblGameResults.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GameResults.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlGameResultLayout = new javax.swing.GroupLayout(pnlGameResult);
         pnlGameResult.setLayout(pnlGameResultLayout);
