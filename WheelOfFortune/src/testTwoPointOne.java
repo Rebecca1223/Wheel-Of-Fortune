@@ -450,7 +450,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\!!!ICS4U\\Unit 1 (final)\\Wheel-Of-Fortune-ICS4U\\WheelOfFortune\\Wheel.gif")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Wheel.gif"))); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 51, 0));
@@ -493,7 +493,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(31, 31, 31)
                 .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
