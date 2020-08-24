@@ -450,6 +450,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jeffrey\\Desktop\\ICS4U\\Unit 4\\Programs\\Wheel-Of-Fortune-ICS4U\\WheelOfFortune\\Wheel.gif")); // NOI18N
         jLabel7.setPreferredSize(new java.awt.Dimension(200, 200));
 
         jLabel8.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
