@@ -51,17 +51,17 @@ public class testTwoPointOne extends javax.swing.JFrame {
         CompMoney.setEditable(false);
         Phrase.setEditable(false);
         Instructions.setEditable(false);
-
+        
         hideAll();
         pnlStart.setVisible(true);
     }
-
+    
     // Shows winner in end screen
     public void showWinner() {
         String strWinnerOutput = "<html><center>";
-        if (userTotal > computerTotal) {
+        if(userTotal>computerTotal){
             strWinnerOutput += "Winner: User<br/>";
-        } else if (computerTotal < userTotal) {
+        } else if(computerTotal<userTotal){
             strWinnerOutput += "Winner: Computer<br/>";
         } else {
             strWinnerOutput += "Tie!<br/>";
@@ -78,31 +78,31 @@ public class testTwoPointOne extends javax.swing.JFrame {
         pnlEnd.setVisible(false);
         pnlGameResult.setVisible(false);
     }
-
+    
     // Generates text file as game report
     public void generateReport() {
         // src: https://tdsb.elearningontario.ca/d2l/le/lessons/16360232/topics/125463885
         String strEndResult = "";
         try {
-            OutputStream fout = new FileOutputStream("gameReport.xml");
-            OutputStream bout = new BufferedOutputStream(fout);
+            OutputStream fout= new FileOutputStream("gameReport.xml");
+            OutputStream bout= new BufferedOutputStream(fout);
             OutputStreamWriter out
-                    = new OutputStreamWriter(bout, "8859_1");
+             = new OutputStreamWriter(bout, "8859_1");
 
             out.write("<?xml version=\"1.0\" ");
             out.write("encoding=\"ISO-8859-1\"?>\r\n");
             out.write("<game>\r\n");
-
+            
             out.write("<result>\r\n");
-            if (userTotal > computerTotal) {
+            if(userTotal>computerTotal){
                 out.write("<winner> User </winner>\r\n");
-            } else if (computerTotal < userTotal) {
+            } else if(computerTotal<userTotal){
                 out.write("<winner> Computer </winner>\r\n");
             } else {
                 out.write("<outcome> Tie </outcome>\r\n");
             }
             out.write("</result>\r\n");
-
+            
             out.write("<player>\r\n");
             out.write("<name> User </name>\r\n");
             out.write("<balance>" + Integer.toString(userTotal) + "</balance>\r\n");
@@ -113,20 +113,22 @@ public class testTwoPointOne extends javax.swing.JFrame {
             out.write("<balance>" + Integer.toString(computerTotal) + "</balance>\r\n");
             out.write("</player> \r\n");
             out.write("</game>\r\n");
-
-            out.flush();
+            
+            out.flush();  
             out.close();
-        } catch (UnsupportedEncodingException e) {
+        }
+        catch (UnsupportedEncodingException e) {
             System.out.println(
-                    "This VM does not support the Latin-1 character set."
+             "This VM does not support the Latin-1 character set."
             );
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
-        if (userTotal > computerTotal) {
+        
+        if(userTotal>computerTotal){
             strEndResult += "Winner: User\n";
-        } else if (computerTotal < userTotal) {
+        } else if(computerTotal<userTotal){
             strEndResult += "Winner: Computer\n";
         } else {
             strEndResult += "Tie!\n";
@@ -134,7 +136,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
         strEndResult += "Player balance: " + Integer.toString(userTotal) + "\nComputer balance: " + Integer.toString(computerTotal);
         txtEndResult.setText(strEndResult);
     }
-
+    
     //method to get first letter input from user and changing it to caps
     public static void iChange(String guess) {
         guess = guess.toUpperCase(); //changes what user enters to all uppercase
@@ -427,7 +429,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
         pnlStart.setBackground(new java.awt.Color(234, 234, 255));
 
         lblTitle.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
-        lblTitle.setForeground(new java.awt.Color(255, 204, 0));
+        lblTitle.setForeground(new java.awt.Color(255, 255, 0));
         lblTitle.setText("WHEEL OF FORTUNE");
 
         btnPlay.setBackground(new java.awt.Color(204, 153, 0));
@@ -911,131 +913,124 @@ public class testTwoPointOne extends javax.swing.JFrame {
     }//GEN-LAST:event_GuessPhraseActionPerformed
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
+        guess = Guess.getText();
 
-        if (Guess.getText().equals("")) {
-            Instructions.setText("Please enter your guess then press Submit");
-        } else {
-            guess = Guess.getText();
+        Guess.setText("");
+        Guess.setEditable(false);
+        Submit.setEnabled(false);
 
-            Guess.setText("");
-            Guess.setEditable(false);
-            Submit.setEnabled(false);
+        iChange(guess);
 
-            iChange(guess);
+        if (type == 1) {
+            tof = validateC(phrase, guessL, alphabet, enter, phraseS); //assigns return value of validateC method as value for variable
+            userTotal = userTotal - 250;
+            UserMoney.setText(Integer.toString(userTotal));
 
-            if (type == 1) {
-                tof = validateC(phrase, guessL, alphabet, enter, phraseS); //assigns return value of validateC method as value for variable
-                userTotal = userTotal - 250;
-                UserMoney.setText(Integer.toString(userTotal));
+            if (checkVowel(guessL) == false) {
+                Instructions.setText("That is not a vowel! You lost your turn..");
+                computer();
+            } else if (tof) { //condition, if met, proceed
+                System.out.println("That letter has already been guessed"); //Print this
+                Instructions.setText("That letter has already been guessed");
+                computer();
+            } else {
+                record(guessL, enter, alphabet); //uses record method
+                gameBoard(phrase, phraseC, phraseS, guessL, spinner, rngSpin); //uses gameboard method
 
-                if (checkVowel(guessL) == false) {
-                    Instructions.setText("That is not a vowel! You lost your turn..");
-                    computer();
-                } else if (tof) { //condition, if met, proceed
-                    System.out.println("That letter has already been guessed"); //Print this
-                    Instructions.setText("That letter has already been guessed");
-                    computer();
-                } else {
-                    record(guessL, enter, alphabet); //uses record method
-                    gameBoard(phrase, phraseC, phraseS, guessL, spinner, rngSpin); //uses gameboard method
-
-                    if (numberC > 0) { //condition, if met, proceed
-                        System.out.println("Congrats, there are " + numberC + " of those letters!"); //Print this
-                        display = "Congrats, there are " + numberC + " of those letters!";
-                        int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-                        if (n == 0) {
-                            if (boardFinish(phrase, phraseS)) {
-                                int x = JOptionPane.showOptionDialog(null, "Game Over", null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-                                if (x == 0) {
-                                    //go to end game screen
-                                    System.out.println("Game over");
-                                    hideAll();
-                                    pnlEnd.setVisible(true);
-                                    showWinner();
-                                }
-                            } else {
-                                reveal = String.valueOf(phraseS);
-                                Phrase.setText(reveal);
-                                userPlay();
-                            }
-                        }
-                    } else if (numberC == 0) {  //condition, if met, proceed
-                        System.out.println("Sorry, that letter does not appear in this phrase"); //Print this
-                        display = "Sorry, that letter does not appear in this phrase";
-                        int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-                        if (n == 0) {
-                            computer();
-                        }
-                    }
-                }
-            } else if (type == 2) {
-                tof = validateC(phrase, guessL, alphabet, enter, phraseS); //assigns return value of validateC method as value for variable
-
-                if (checkVowel(guessL)) {
-                    Instructions.setText("That is not a consonant! You lost your turn..");
-                    computer();
-                } else if (tof) { //condition, if met, proceed
-                    System.out.println("That letter has already been guessed"); //Print this
-                    Instructions.setText("That letter has already been guessed");
-                    computer();
-                } else {
-                    record(guessL, enter, alphabet); //uses record method
-                    gameBoard(phrase, phraseC, phraseS, guessL, spinner, rngSpin); //uses gameboard method
-                    if (numberC > 0) { //condition, if met, proceed
-                        System.out.println("Congrats, there are " + numberC + " of those letters!"); //Print this
-                        gain = numberC * spinner[rngSpin]; //value assignment to variable
-                        display = "Congrats, there are " + numberC + " of those letters! \n You gained " + gain + " dollars!";
-                        int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-                        if (n == 0) {
-                            userTotal = userTotal + gain;
-                            UserMoney.setText(Integer.toString(userTotal));
-                            if (boardFinish(phrase, phraseS)) {
-                                int x = JOptionPane.showOptionDialog(null, "Game Over", null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-                                if (x == 0) {
-                                    //go to end game screen
-                                    System.out.println("Game over");
-                                    hideAll();
-                                    pnlEnd.setVisible(true);
-                                    showWinner();
-                                }
-                            } else {
-                                reveal = String.valueOf(phraseS);
-                                Phrase.setText(reveal);
-                                userPlay();
-                            }
-                        }
-                    } else if (numberC == 0) {  //condition, if met, proceed
-                        System.out.println("Sorry, that letter does not appear in this phrase"); //Print this
-                        display = "Sorry, that letter does not appear in this phrase";
-                        int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-                        if (n == 0) {
-                            computer();
-                        }
-                    }
-                }
-            } else if (type == 3) {
-                if (guess.equalsIgnoreCase(phrase)) {
-                    display = "Congrats, you have guessed the correct phrase!";
+                if (numberC > 0) { //condition, if met, proceed
+                    System.out.println("Congrats, there are " + numberC + " of those letters!"); //Print this
+                    display = "Congrats, there are " + numberC + " of those letters!";
                     int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                     if (n == 0) {
-                        //go to end game screen
-                        System.out.println("Game over");
-                        userTotal = userTotal + 1000;
-                        hideAll();
-                        pnlEnd.setVisible(true);
-                        showWinner();
+                        if (boardFinish(phrase, phraseS)) {
+                            int x = JOptionPane.showOptionDialog(null, "Game Over", null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+                            if (x == 0) {
+                                //go to end game screen
+                                System.out.println("Game over");
+                                hideAll();
+                                pnlEnd.setVisible(true);
+                                showWinner();
+                            }
+                        } else {
+                            reveal = String.valueOf(phraseS);
+                            Phrase.setText(reveal);
+                            userPlay();
+                        }
                     }
-                } else {
-                    display = "That is not the correct phrase!";
+                } else if (numberC == 0) {  //condition, if met, proceed
+                    System.out.println("Sorry, that letter does not appear in this phrase"); //Print this
+                    display = "Sorry, that letter does not appear in this phrase";
                     int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                     if (n == 0) {
                         computer();
                     }
                 }
             }
+        } else if (type == 2) {
+            tof = validateC(phrase, guessL, alphabet, enter, phraseS); //assigns return value of validateC method as value for variable
+
+            if (checkVowel(guessL)) {
+                Instructions.setText("That is not a consonant! You lost your turn..");
+                computer();
+            } else if (tof) { //condition, if met, proceed
+                System.out.println("That letter has already been guessed"); //Print this
+                Instructions.setText("That letter has already been guessed");
+                computer();
+            } else {
+                record(guessL, enter, alphabet); //uses record method
+                gameBoard(phrase, phraseC, phraseS, guessL, spinner, rngSpin); //uses gameboard method
+                if (numberC > 0) { //condition, if met, proceed
+                    System.out.println("Congrats, there are " + numberC + " of those letters!"); //Print this
+                    gain = numberC * spinner[rngSpin]; //value assignment to variable
+                    display = "Congrats, there are " + numberC + " of those letters! \n You gained " + gain + " dollars!";
+                    int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+                    if (n == 0) {
+                        userTotal = userTotal + gain;
+                        UserMoney.setText(Integer.toString(userTotal));
+                        if (boardFinish(phrase, phraseS)) {
+                            int x = JOptionPane.showOptionDialog(null, "Game Over", null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+                            if (x == 0) {
+                                //go to end game screen
+                                System.out.println("Game over");
+                                hideAll();
+                                pnlEnd.setVisible(true);
+                                showWinner();
+                            }
+                        } else {
+                            reveal = String.valueOf(phraseS);
+                            Phrase.setText(reveal);
+                            userPlay();
+                        }
+                    }
+                } else if (numberC == 0) {  //condition, if met, proceed
+                    System.out.println("Sorry, that letter does not appear in this phrase"); //Print this
+                    display = "Sorry, that letter does not appear in this phrase";
+                    int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+                    if (n == 0) {
+                        computer();
+                    }
+                }
+            }
+        } else if (type == 3) {
+            if (guess.equalsIgnoreCase(phrase)) {
+                display = "Congrats, you have guessed the correct phrase!";
+                int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+                if (n == 0) {
+                    //go to end game screen
+                    System.out.println("Game over");
+                    userTotal = userTotal + 1000;
+                    hideAll();
+                    pnlEnd.setVisible(true);
+                    showWinner();
+                }
+            } else {
+                display = "That is not the correct phrase!";
+                int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+                if (n == 0) {
+                    computer();
+                }
+            }
         }
-
-
     }//GEN-LAST:event_SubmitActionPerformed
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
