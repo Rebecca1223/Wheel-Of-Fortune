@@ -92,15 +92,25 @@ public class testTwoPointOne extends javax.swing.JFrame {
             out.write("encoding=\"ISO-8859-1\"?>\r\n");
             out.write("<game>\r\n");
             
-            out.write("<Player>\r\n");
+            out.write("<result>\r\n");
+            if(userTotal>computerTotal){
+                out.write("<winner> User </winner>\r\n");
+            } else if(computerTotal<userTotal){
+                out.write("<winner> Computer </winner>\r\n");
+            } else {
+                out.write("<outcome> Tie </outcome>\r\n");
+            }
+            out.write("</result>\r\n");
+            
+            out.write("<player>\r\n");
             out.write("<name> User </name>\r\n");
-            out.write("<Balance>" + Integer.toString(userTotal) + "</Balance>\r\n");
-            out.write("</Player> \r\n");
+            out.write("<balance>" + Integer.toString(userTotal) + "</balance>\r\n");
+            out.write("</player> \r\n");
 
-            out.write("<Player>\r\n");
+            out.write("<player>\r\n");
             out.write("<name> Computer </name>\r\n");
-            out.write("<Balance>" + Integer.toString(computerTotal) + "</Balance>\r\n");
-            out.write("</Player> \r\n");
+            out.write("<balance>" + Integer.toString(computerTotal) + "</balance>\r\n");
+            out.write("</player> \r\n");
             out.write("</game>\r\n");
             
             out.flush();  
