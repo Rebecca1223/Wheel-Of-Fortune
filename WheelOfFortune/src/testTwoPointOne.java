@@ -390,6 +390,9 @@ public class testTwoPointOne extends javax.swing.JFrame {
         lblTitle = new javax.swing.JLabel();
         btnPlay = new javax.swing.JButton();
         btnInstructions = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         pnlInstructions = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -423,9 +426,14 @@ public class testTwoPointOne extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        pnlStart.setBackground(new java.awt.Color(204, 204, 255));
+
+        lblTitle.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(255, 255, 0));
         lblTitle.setText("WHEEL OF FORTUNE");
 
+        btnPlay.setBackground(new java.awt.Color(204, 153, 0));
+        btnPlay.setForeground(new java.awt.Color(153, 51, 0));
         btnPlay.setText("Play");
         btnPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -433,6 +441,8 @@ public class testTwoPointOne extends javax.swing.JFrame {
             }
         });
 
+        btnInstructions.setBackground(new java.awt.Color(204, 153, 0));
+        btnInstructions.setForeground(new java.awt.Color(153, 51, 0));
         btnInstructions.setText("Instructions");
         btnInstructions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -440,34 +450,62 @@ public class testTwoPointOne extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\!!!ICS4U\\Unit 1 (final)\\Wheel-Of-Fortune-ICS4U\\WheelOfFortune\\Wheel.gif")); // NOI18N
+
+        jLabel8.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 51, 0));
+        jLabel8.setText("Welcome To...");
+
+        jLabel9.setText("ICS4U");
+
         javax.swing.GroupLayout pnlStartLayout = new javax.swing.GroupLayout(pnlStart);
         pnlStart.setLayout(pnlStartLayout);
         pnlStartLayout.setHorizontalGroup(
             pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStartLayout.createSequentialGroup()
+                .addGap(136, 136, 136)
+                .addComponent(btnPlay)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnInstructions)
+                .addGap(120, 120, 120))
             .addGroup(pnlStartLayout.createSequentialGroup()
                 .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlStartLayout.createSequentialGroup()
-                        .addGap(148, 148, 148)
+                        .addGap(194, 194, 194)
+                        .addComponent(jLabel7))
+                    .addGroup(pnlStartLayout.createSequentialGroup()
+                        .addGap(173, 173, 173)
                         .addComponent(lblTitle))
                     .addGroup(pnlStartLayout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(btnPlay)
-                        .addGap(42, 42, 42)
-                        .addComponent(btnInstructions)))
-                .addContainerGap(193, Short.MAX_VALUE))
+                        .addGap(202, 202, 202)
+                        .addComponent(jLabel8))
+                    .addGroup(pnlStartLayout.createSequentialGroup()
+                        .addGap(274, 274, 274)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         pnlStartLayout.setVerticalGroup(
             pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStartLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(22, 22, 22)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(31, 31, 31)
                 .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPlay)
-                    .addComponent(btnInstructions))
-                .addGap(103, 103, 103))
+                    .addComponent(btnInstructions)
+                    .addComponent(btnPlay))
+                .addGap(58, 58, 58))
         );
 
+        pnlInstructions.setBackground(new java.awt.Color(204, 204, 255));
+
+        jButton1.setBackground(new java.awt.Color(204, 102, 0));
+        jButton1.setForeground(new java.awt.Color(153, 51, 0));
         jButton1.setText("Return to main menu");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -475,6 +513,8 @@ public class testTwoPointOne extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(204, 102, 0));
+        jButton2.setForeground(new java.awt.Color(153, 51, 0));
         jButton2.setText("Start game");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -484,7 +524,6 @@ public class testTwoPointOne extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel3.setText("<html><center><b>Tutorial</b><br/><br/>Wheel of Fortune begins with a start screen with two buttons: “Start Game” and “Instructions”. “Start Game” will start the game and take you to the main game screen. “Instructions” will take you to a screen displaying instructions on how to play the game.<br/><br/>The main game screen will have five buttons: “Play”, “Buy a Vowel”, “Guess a Consonant”, “Guess the Phrase”, and “Submit Guess”.<br/><br/>Clicking “Play” will start the game with your turn, which will display the result of the spinning wheel. If you have received a monetary value, it will be displayed below and you will be allowed to click either “Buy a Vowel” *, “Guess a Consonant” or “Guess the Phrase”. Once you have selected your choice the game will progress.<br/><br/>If you choose to buy a vowel for a set amount of money, the set amount will be deducted from your overall balance. You will then be prompted to enter any vowel that you choose. If the selected vowel is in the phrase, the vowel will be shown. If not, all players will be notified that the vowel is not in the phrase.<br/><br/>If you have chosen to guess a consonant, you will be prompted to enter your letter or answer into the answer field and click “Submit Guess”. If your letter is in the phrase, it will be revealed, otherwise it won’t. If you guess the phrase correctly you will receive a $1,000 bonus, otherwise it will be the computer’s turn.<br/><br/>If you have chosen to guess the phrase, you will be prompted to enter your guess. If the guess matches the hidden phrase, the game will display a message stating that the guess is correct. If the guess is incorrect, the game will continue.<br><br/>This will repeat until the phrase has been guessed correctly or until all the letters have been revealed. Once that happens, the player with the most money wins. </center></html>");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -512,9 +551,9 @@ public class testTwoPointOne extends javax.swing.JFrame {
             .addGroup(pnlInstructionsLayout.createSequentialGroup()
                 .addGap(127, 127, 127)
                 .addComponent(jButton1)
-                .addGap(64, 64, 64)
+                .addGap(79, 79, 79)
                 .addComponent(jButton2)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         pnlInstructionsLayout.setVerticalGroup(
             pnlInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1093,6 +1132,9 @@ public class testTwoPointOne extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEndGameText;
