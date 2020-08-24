@@ -394,10 +394,11 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         pnlInstructions = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
         pnlGame = new javax.swing.JPanel();
         Play = new javax.swing.JButton();
         GuessPhrase = new javax.swing.JButton();
@@ -431,7 +432,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
 
         lblTitle.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(255, 255, 0));
-        lblTitle.setText("WHEEL OF FORTUNE");
+        lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/wheeloffortune.png"))); // NOI18N
 
         btnPlay.setBackground(new java.awt.Color(204, 153, 0));
         btnPlay.setFont(new java.awt.Font("Malgun Gothic Semilight", 0, 18)); // NOI18N
@@ -457,64 +458,76 @@ public class testTwoPointTwo extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 51, 0));
-        jLabel8.setText("Welcome To...");
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/welcometo.png"))); // NOI18N
 
-        jLabel9.setText("ICS4U");
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICS4U.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlStartLayout = new javax.swing.GroupLayout(pnlStart);
         pnlStart.setLayout(pnlStartLayout);
         pnlStartLayout.setHorizontalGroup(
             pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStartLayout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnInstructions)
-                .addGap(145, 145, 145))
             .addGroup(pnlStartLayout.createSequentialGroup()
                 .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlStartLayout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlStartLayout.createSequentialGroup()
-                        .addGap(173, 173, 173)
+                        .addGap(190, 190, 190)
                         .addComponent(lblTitle))
                     .addGroup(pnlStartLayout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addComponent(jLabel8))
+                        .addGap(144, 144, 144)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlStartLayout.createSequentialGroup()
-                        .addGap(274, 274, 274)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(181, Short.MAX_VALUE))
+                        .addGap(160, 160, 160)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlStartLayout.createSequentialGroup()
+                        .addGap(369, 369, 369)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlStartLayout.createSequentialGroup()
+                        .addGap(412, 412, 412)
+                        .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnInstructions)
+                            .addGroup(pnlStartLayout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
         pnlStartLayout.setVerticalGroup(
             pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStartLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
+                .addContainerGap(586, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
-                .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnInstructions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPlay, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
-                .addGap(48, 48, 48))
+                .addComponent(btnInstructions)
+                .addGap(130, 130, 130))
         );
 
         pnlInstructions.setBackground(new java.awt.Color(204, 204, 255));
 
-        jButton1.setBackground(new java.awt.Color(204, 102, 0));
-        jButton1.setForeground(new java.awt.Color(153, 51, 0));
-        jButton1.setText("Return to main menu");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel3.setText("<html><center>Wheel of Fortune begins with a start screen with two buttons: “Start Game” and “Instructions”. “Start Game” will start the game and take you to the main game screen. “Instructions” will take you to a screen displaying instructions on how to play the game.<br/><br/>The main game screen will have five buttons: “Play”, “Buy a Vowel”, “Guess a Consonant”, “Guess the Phrase”, and “Submit Guess”.<br/><br/>Clicking “Play” will start the game with your turn, which will display the result of the spinning wheel. If you have received a monetary value, it will be displayed below and you will be allowed to click either “Buy a Vowel” *, “Guess a Consonant” or “Guess the Phrase”. Once you have selected your choice the game will progress.<br/><br/>If you choose to buy a vowel for a set amount of money, the set amount will be deducted from your overall balance. You will then be prompted to enter any vowel that you choose. If the selected vowel is in the phrase, the vowel will be shown. If not, all players will be notified that the vowel is not in the phrase.<br/><br/>If you have chosen to guess a consonant, you will be prompted to enter your letter or answer into the answer field and click “Submit Guess”. If your letter is in the phrase, it will be revealed, otherwise it won’t. If you guess the phrase correctly you will receive a $1,000 bonus, otherwise it will be the computer’s turn.<br/><br/>If you have chosen to guess the phrase, you will be prompted to enter your guess. If the guess matches the hidden phrase, the game will display a message stating that the guess is correct. If the guess is incorrect, the game will continue.<br><br/>This will repeat until the phrase has been guessed correctly or until all the letters have been revealed. Once that happens, the player with the most money wins. </center></html>");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jButton2.setBackground(new java.awt.Color(204, 102, 0));
         jButton2.setForeground(new java.awt.Color(153, 51, 0));
@@ -525,49 +538,47 @@ public class testTwoPointTwo extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(204, 102, 0));
+        jButton1.setForeground(new java.awt.Color(153, 51, 0));
+        jButton1.setText("Return to main menu");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setText("<html><center><b>Tutorial</b><br/><br/>Wheel of Fortune begins with a start screen with two buttons: “Start Game” and “Instructions”. “Start Game” will start the game and take you to the main game screen. “Instructions” will take you to a screen displaying instructions on how to play the game.<br/><br/>The main game screen will have five buttons: “Play”, “Buy a Vowel”, “Guess a Consonant”, “Guess the Phrase”, and “Submit Guess”.<br/><br/>Clicking “Play” will start the game with your turn, which will display the result of the spinning wheel. If you have received a monetary value, it will be displayed below and you will be allowed to click either “Buy a Vowel” *, “Guess a Consonant” or “Guess the Phrase”. Once you have selected your choice the game will progress.<br/><br/>If you choose to buy a vowel for a set amount of money, the set amount will be deducted from your overall balance. You will then be prompted to enter any vowel that you choose. If the selected vowel is in the phrase, the vowel will be shown. If not, all players will be notified that the vowel is not in the phrase.<br/><br/>If you have chosen to guess a consonant, you will be prompted to enter your letter or answer into the answer field and click “Submit Guess”. If your letter is in the phrase, it will be revealed, otherwise it won’t. If you guess the phrase correctly you will receive a $1,000 bonus, otherwise it will be the computer’s turn.<br/><br/>If you have chosen to guess the phrase, you will be prompted to enter your guess. If the guess matches the hidden phrase, the game will display a message stating that the guess is correct. If the guess is incorrect, the game will continue.<br><br/>This will repeat until the phrase has been guessed correctly or until all the letters have been revealed. Once that happens, the player with the most money wins. </center></html>");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
-        );
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/instructions.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlInstructionsLayout = new javax.swing.GroupLayout(pnlInstructions);
         pnlInstructions.setLayout(pnlInstructionsLayout);
         pnlInstructionsLayout.setHorizontalGroup(
             pnlInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInstructionsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 364, Short.MAX_VALUE))
             .addGroup(pnlInstructionsLayout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(jButton1)
-                .addGap(79, 79, 79)
-                .addComponent(jButton2)
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addGroup(pnlInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlInstructionsLayout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(jButton1)
+                        .addGap(146, 146, 146)
+                        .addComponent(jButton2))
+                    .addGroup(pnlInstructionsLayout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addComponent(jLabel10)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlInstructionsLayout.setVerticalGroup(
             pnlInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInstructionsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+            .addGroup(pnlInstructionsLayout.createSequentialGroup()
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addGroup(pnlInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap())
+                .addContainerGap(898, Short.MAX_VALUE))
         );
 
         Play.setText("Play");
@@ -850,7 +861,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(pnlContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1138,6 +1149,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
