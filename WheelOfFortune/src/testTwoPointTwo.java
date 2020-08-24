@@ -456,7 +456,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
 
         jLabel7.setPreferredSize(new java.awt.Dimension(200, 200));
 
-        jLabel8.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 51, 0));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/welcometo.png"))); // NOI18N
 
