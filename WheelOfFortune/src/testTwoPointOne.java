@@ -450,7 +450,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Wheel.gif"))); // NOI18N
+        jLabel7.setPreferredSize(new java.awt.Dimension(200, 200));
 
         jLabel8.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 51, 0));
@@ -472,7 +472,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
                 .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlStartLayout.createSequentialGroup()
                         .addGap(194, 194, 194)
-                        .addComponent(jLabel7))
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlStartLayout.createSequentialGroup()
                         .addGap(173, 173, 173)
                         .addComponent(lblTitle))
@@ -494,7 +494,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInstructions)
