@@ -492,7 +492,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         pnlStartLayout.setVerticalGroup(
             pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStartLayout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblCourseCode, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -622,7 +622,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         lblYourMoney.setText("You currently have ($):");
 
         lblComputerMoney.setFont(new java.awt.Font("Malgun Gothic Semilight", 0, 14)); // NOI18N
-        lblComputerMoney.setText("The Computer currently have ($):");
+        lblComputerMoney.setText("The Computer currently has ($):");
 
         GuessConsonant.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 14)); // NOI18N
         GuessConsonant.setText("Guess a Consonant");
@@ -763,29 +763,28 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         pnlEndLayout.setHorizontalGroup(
             pnlEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEndLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(lblEndGameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEndLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pnlEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlEndLayout.createSequentialGroup()
-                        .addGap(217, 217, 217)
-                        .addGroup(pnlEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnGenerateReport)
-                            .addGroup(pnlEndLayout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(btnExit))))
-                    .addGroup(pnlEndLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(lblEndGameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEndLayout.createSequentialGroup()
+                        .addComponent(btnGenerateReport)
+                        .addGap(170, 170, 170))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEndLayout.createSequentialGroup()
+                        .addComponent(btnExit)
+                        .addGap(230, 230, 230))))
         );
         pnlEndLayout.setVerticalGroup(
             pnlEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEndLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblEndGameText, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addGap(61, 61, 61)
                 .addComponent(btnGenerateReport)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnExit)
-                .addGap(147, 147, 147))
+                .addContainerGap())
         );
 
         pnlGameResult.setBackground(new java.awt.Color(204, 204, 255));
@@ -795,6 +794,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         txtEndResult.setRows(5);
         jScrollPane1.setViewportView(txtEndResult);
 
+        btnExitGameResult.setBackground(new java.awt.Color(204, 153, 0));
         btnExitGameResult.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 14)); // NOI18N
         btnExitGameResult.setText("Exit");
         btnExitGameResult.addActionListener(new java.awt.event.ActionListener() {
@@ -811,7 +811,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         pnlGameResultLayout.setHorizontalGroup(
             pnlGameResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlGameResultLayout.createSequentialGroup()
-                .addContainerGap(101, Short.MAX_VALUE)
+                .addContainerGap(495, Short.MAX_VALUE)
                 .addGroup(pnlGameResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlGameResultLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -821,7 +821,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
                         .addGap(152, 152, 152))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlGameResultLayout.createSequentialGroup()
                         .addComponent(btnExitGameResult, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(231, 231, 231))))
+                        .addGap(243, 243, 243))))
         );
         pnlGameResultLayout.setVerticalGroup(
             pnlGameResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -830,9 +830,9 @@ public class testTwoPointTwo extends javax.swing.JFrame {
                 .addComponent(lblGameResults, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(27, 27, 27)
                 .addComponent(btnExitGameResult)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(942, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlContainerLayout = new javax.swing.GroupLayout(pnlContainer);
