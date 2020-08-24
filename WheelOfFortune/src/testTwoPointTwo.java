@@ -3,22 +3,6 @@ import javax.swing.JOptionPane;
 import java.util.Random; //importing RNG method
 import java.io.*;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
-
-        Object[] options = {"OK"};
-        int n = JOptionPane.showOptionDialog(null, "Message here ",null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-        if (n==0) {
-            System.out.println ("this works");
-        }
-
- */
-/**
- *
- * @author acceb
- */
 public class testTwoPointTwo extends javax.swing.JFrame {
 
     public static Object[] options = {"OK"};
@@ -133,7 +117,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         } else {
             strEndResult += "Tie!\n";
         }
-        strEndResult += "Player balance: " + Integer.toString(userTotal) + "\nComputer balance: " + Integer.toString(userTotal);
+        strEndResult += "Player balance: " + Integer.toString(userTotal) + "\nComputer balance: " + Integer.toString(computerTotal);
         txtEndResult.setText(strEndResult);
     }
     

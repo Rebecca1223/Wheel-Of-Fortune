@@ -133,7 +133,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
         } else {
             strEndResult += "Tie!\n";
         }
-        strEndResult += "Player balance: " + Integer.toString(userTotal) + "\nComputer balance: " + Integer.toString(userTotal);
+        strEndResult += "Player balance: " + Integer.toString(userTotal) + "\nComputer balance: " + Integer.toString(computerTotal);
         txtEndResult.setText(strEndResult);
     }
     
@@ -426,7 +426,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        pnlStart.setBackground(new java.awt.Color(204, 204, 255));
+        pnlStart.setBackground(new java.awt.Color(234, 234, 255));
 
         lblTitle.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(255, 255, 0));
@@ -450,7 +450,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jeffrey\\Desktop\\ICS4U\\Unit 4\\Programs\\Wheel-Of-Fortune-ICS4U\\WheelOfFortune\\Wheel.gif")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\!!!ICS4U\\Unit 1 (final)\\Wheel-Of-Fortune-ICS4U\\WheelOfFortune\\Spinner.gif")); // NOI18N
         jLabel7.setPreferredSize(new java.awt.Dimension(200, 200));
 
         jLabel8.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
@@ -464,39 +464,39 @@ public class testTwoPointOne extends javax.swing.JFrame {
         pnlStartLayout.setHorizontalGroup(
             pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStartLayout.createSequentialGroup()
-                .addGap(136, 136, 136)
+                .addGap(298, 298, 298)
                 .addComponent(btnPlay)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnInstructions)
-                .addGap(120, 120, 120))
+                .addGap(294, 294, 294))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStartLayout.createSequentialGroup()
+                .addContainerGap(284, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(251, 251, 251))
             .addGroup(pnlStartLayout.createSequentialGroup()
+                .addGap(420, 420, 420)
                 .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlStartLayout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlStartLayout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(lblTitle))
-                    .addGroup(pnlStartLayout.createSequentialGroup()
-                        .addGap(202, 202, 202)
+                        .addGap(29, 29, 29)
                         .addComponent(jLabel8))
                     .addGroup(pnlStartLayout.createSequentialGroup()
-                        .addGap(274, 274, 274)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(181, Short.MAX_VALUE))
+                        .addGap(101, 101, 101)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblTitle))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlStartLayout.setVerticalGroup(
             pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStartLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInstructions)
                     .addComponent(btnPlay))
@@ -1014,11 +1014,11 @@ public class testTwoPointOne extends javax.swing.JFrame {
         } else if (type == 3) {
             if (guess.equalsIgnoreCase(phrase)) {
                 display = "Congrats, you have guessed the correct phrase!";
-                userTotal = userTotal + 1000;
                 int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                 if (n == 0) {
                     //go to end game screen
                     System.out.println("Game over");
+                    userTotal = userTotal + 1000;
                     hideAll();
                     pnlEnd.setVisible(true);
                     showWinner();
