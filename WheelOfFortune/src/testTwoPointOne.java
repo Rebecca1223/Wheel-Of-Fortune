@@ -56,12 +56,27 @@ public class testTwoPointOne extends javax.swing.JFrame {
         pnlStart.setVisible(true);
     }
     
+    // Shows winner in end screen
+    public void showWinner() {
+        String strWinnerOutput = "<html><center>";
+        if(userTotal>computerTotal){
+            strWinnerOutput += "Winner: User<br/>";
+        } else if(computerTotal<userTotal){
+            strWinnerOutput += "Winner: Computer<br/>";
+        } else {
+            strWinnerOutput += "Tie!<br/>";
+        }
+        strWinnerOutput += "Thank you for playing Wheel of Fortune!</center></html>";
+        lblEndGameText.setText(strWinnerOutput);
+    }
+
     // Hides all screens
     public void hideAll() {
         pnlStart.setVisible(false);
         pnlInstructions.setVisible(false);
         pnlGame.setVisible(false);
         pnlEnd.setVisible(false);
+        pnlGameResult.setVisible(false);
     }
     
     // Generates text file as game report
@@ -164,7 +179,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
         return boardF; //returns value of variable
     }
 
-    public static void userPlay() {
+    public void userPlay() {
         UserMoney.setText(Integer.toString(userTotal));
         CompMoney.setText(Integer.toString(computerTotal));
 
@@ -201,7 +216,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
         }
     }
 
-    public static void computer() {
+    public void computer() {
         rngSpin = randGen.nextInt(25);
         if (rngSpin == 21 || rngSpin == 22) {
             computerTotal = 0;
@@ -246,6 +261,9 @@ public class testTwoPointOne extends javax.swing.JFrame {
                                     if (x == 0) {
                                         //go to end game screen
                                         System.out.println("Game over");
+                                        hideAll();
+                                        pnlEnd.setVisible(true);
+                                        showWinner();
                                     }
                                 } else {
                                     reveal = String.valueOf(phraseS);
@@ -292,6 +310,9 @@ public class testTwoPointOne extends javax.swing.JFrame {
                                     if (x == 0) {
                                         //go to end game screen
                                         System.out.println("Game over");
+                                        hideAll();
+                                        pnlEnd.setVisible(true);
+                                        showWinner();
                                     }
                                 } else {
                                     reveal = String.valueOf(phraseS);
@@ -320,6 +341,9 @@ public class testTwoPointOne extends javax.swing.JFrame {
                     if (n == 0) {
                         //go to end game screen
                         System.out.println("Game Over");
+                        hideAll();
+                        pnlEnd.setVisible(true);
+                        showWinner();
                     }
                 } else {
                     display = display + "It was the incorrect phrase. \n Your turn!";
@@ -367,11 +391,13 @@ public class testTwoPointOne extends javax.swing.JFrame {
         CompMoney = new javax.swing.JTextField();
         Submit = new javax.swing.JButton();
         pnlEnd = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        lblEndGameText = new javax.swing.JLabel();
         btnGenerateReport = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        pnlGameResult = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtEndResult = new javax.swing.JTextArea();
+        btnExitGameResult = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -406,14 +432,14 @@ public class testTwoPointOne extends javax.swing.JFrame {
                         .addComponent(btnPlay)
                         .addGap(42, 42, 42)
                         .addComponent(btnInstructions)))
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(193, Short.MAX_VALUE))
         );
         pnlStartLayout.setVerticalGroup(
             pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStartLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(lblTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
                 .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPlay)
                     .addComponent(btnInstructions))
@@ -595,8 +621,8 @@ public class testTwoPointOne extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setText("<html><center>Thank you for playing Wheel of Fortune!</center></html>");
+        lblEndGameText.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblEndGameText.setText("<html><center>Thank you for playing Wheel of Fortune!</center></html>");
 
         btnGenerateReport.setText("Generate game report");
         btnGenerateReport.addActionListener(new java.awt.event.ActionListener() {
@@ -612,11 +638,6 @@ public class testTwoPointOne extends javax.swing.JFrame {
             }
         });
 
-        txtEndResult.setEditable(false);
-        txtEndResult.setColumns(20);
-        txtEndResult.setRows(5);
-        jScrollPane1.setViewportView(txtEndResult);
-
         javax.swing.GroupLayout pnlEndLayout = new javax.swing.GroupLayout(pnlEnd);
         pnlEnd.setLayout(pnlEndLayout);
         pnlEndLayout.setHorizontalGroup(
@@ -624,35 +645,63 @@ public class testTwoPointOne extends javax.swing.JFrame {
             .addGroup(pnlEndLayout.createSequentialGroup()
                 .addGroup(pnlEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlEndLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlEndLayout.createSequentialGroup()
+                        .addGap(217, 217, 217)
                         .addGroup(pnlEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnGenerateReport)
                             .addGroup(pnlEndLayout.createSequentialGroup()
-                                .addGap(172, 172, 172)
-                                .addComponent(btnGenerateReport))
-                            .addGroup(pnlEndLayout.createSequentialGroup()
-                                .addGap(216, 216, 216)
-                                .addComponent(jButton4)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEndLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
+                                .addGap(44, 44, 44)
+                                .addComponent(jButton4))))
+                    .addGroup(pnlEndLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(lblEndGameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         pnlEndLayout.setVerticalGroup(
             pnlEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEndLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(lblEndGameText, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addComponent(btnGenerateReport)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton4)
-                .addGap(74, 74, 74))
+                .addGap(147, 147, 147))
+        );
+
+        txtEndResult.setEditable(false);
+        txtEndResult.setColumns(20);
+        txtEndResult.setRows(5);
+        jScrollPane1.setViewportView(txtEndResult);
+
+        btnExitGameResult.setText("Exit");
+        btnExitGameResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitGameResultActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlGameResultLayout = new javax.swing.GroupLayout(pnlGameResult);
+        pnlGameResult.setLayout(pnlGameResultLayout);
+        pnlGameResultLayout.setHorizontalGroup(
+            pnlGameResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGameResultLayout.createSequentialGroup()
+                .addContainerGap(101, Short.MAX_VALUE)
+                .addGroup(pnlGameResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlGameResultLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(88, 88, 88))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlGameResultLayout.createSequentialGroup()
+                        .addComponent(btnExitGameResult)
+                        .addGap(253, 253, 253))))
+        );
+        pnlGameResultLayout.setVerticalGroup(
+            pnlGameResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGameResultLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(btnExitGameResult)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlContainerLayout = new javax.swing.GroupLayout(pnlContainer);
@@ -668,6 +717,11 @@ public class testTwoPointOne extends javax.swing.JFrame {
                 .addComponent(pnlEnd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnlContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pnlInstructions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(pnlContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlContainerLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(pnlGameResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         pnlContainerLayout.setVerticalGroup(
             pnlContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -680,6 +734,11 @@ public class testTwoPointOne extends javax.swing.JFrame {
                 .addComponent(pnlEnd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnlContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pnlInstructions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(pnlContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlContainerLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(pnlGameResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -801,6 +860,9 @@ public class testTwoPointOne extends javax.swing.JFrame {
                             if (x == 0) {
                                 //go to end game screen
                                 System.out.println("Game over");
+                                hideAll();
+                                pnlEnd.setVisible(true);
+                                showWinner();
                             }
                         } else {
                             reveal = String.valueOf(phraseS);
@@ -843,6 +905,9 @@ public class testTwoPointOne extends javax.swing.JFrame {
                             if (x == 0) {
                                 //go to end game screen
                                 System.out.println("Game over");
+                                hideAll();
+                                pnlEnd.setVisible(true);
+                                showWinner();
                             }
                         } else {
                             reveal = String.valueOf(phraseS);
@@ -869,6 +934,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
                     System.out.println("Game over");
                     hideAll();
                     pnlEnd.setVisible(true);
+                    showWinner();
                 }
             } else {
                 display = "That is not the correct phrase!";
@@ -908,10 +974,16 @@ public class testTwoPointOne extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void btnExitGameResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitGameResultActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnExitGameResultActionPerformed
+
     private void btnGenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateReportActionPerformed
         // TODO add your handling code here:
+        hideAll();
+        pnlGameResult.setVisible(true);
         generateReport();
-        btnGenerateReport.setEnabled(false);
     }//GEN-LAST:event_btnGenerateReportActionPerformed
 
     /**
@@ -961,6 +1033,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
     private static javax.swing.JButton Submit;
     private static javax.swing.JTextField UserMoney;
     private static javax.swing.JTextField Wheel;
+    private javax.swing.JButton btnExitGameResult;
     private javax.swing.JButton btnGenerateReport;
     private javax.swing.JButton btnInstructions;
     private javax.swing.JButton btnPlay;
@@ -972,12 +1045,13 @@ public class testTwoPointOne extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblEndGameText;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JPanel pnlContainer;
     private javax.swing.JPanel pnlEnd;
     private javax.swing.JPanel pnlGame;
+    private javax.swing.JPanel pnlGameResult;
     private javax.swing.JPanel pnlInstructions;
     private javax.swing.JPanel pnlStart;
     private javax.swing.JTextArea txtEndResult;

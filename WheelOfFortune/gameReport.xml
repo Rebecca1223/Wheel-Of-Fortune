@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<game>
+<Player>
+<name> User </name>
+<Balance>1000</Balance>
+</Player> 
+<Player>
+<name> Computer </name>
+<Balance>0</Balance>
+</Player> 
+</game>
