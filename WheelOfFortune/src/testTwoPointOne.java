@@ -373,6 +373,8 @@ public class testTwoPointOne extends javax.swing.JFrame {
         pnlInstructions = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         pnlGame = new javax.swing.JPanel();
         Play = new javax.swing.JButton();
         GuessPhrase = new javax.swing.JButton();
@@ -460,25 +462,50 @@ public class testTwoPointOne extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel3.setText("<html><center><b>Tutorial</b><br/><br/>Wheel of Fortune begins with a start screen with two buttons: “Start Game” and “Instructions”. “Start Game” will start the game and take you to the main game screen. “Instructions” will take you to a screen displaying instructions on how to play the game.<br/><br/>The main game screen will have five buttons: “Play”, “Buy a Vowel”, “Guess a Consonant”, “Guess the Phrase”, and “Submit Guess”.<br/><br/>Clicking “Play” will start the game with your turn, which will display the result of the spinning wheel. If you have received a monetary value, it will be displayed below and you will be allowed to click either “Buy a Vowel” *, “Guess a Consonant” or “Guess the Phrase”. Once you have selected your choice the game will progress.<br/><br/>If you choose to buy a vowel for a set amount of money, the set amount will be deducted from your overall balance. You will then be prompted to enter any vowel that you choose. If the selected vowel is in the phrase, the vowel will be shown. If not, all players will be notified that the vowel is not in the phrase.<br/><br/>If you have chosen to guess a consonant, you will be prompted to enter your letter or answer into the answer field and click “Submit Guess”. If your letter is in the phrase, it will be revealed, otherwise it won’t. If you guess the phrase correctly you will receive a $1,000 bonus, otherwise it will be the computer’s turn.<br/><br/>If you have chosen to guess the phrase, you will be prompted to enter your guess. If the guess matches the hidden phrase, the game will display a message stating that the guess is correct. If the guess is incorrect, the game will continue.<br><br/>This will repeat until the phrase has been guessed correctly or until all the letters have been revealed. Once that happens, the player with the most money wins. </center></html>");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout pnlInstructionsLayout = new javax.swing.GroupLayout(pnlInstructions);
         pnlInstructions.setLayout(pnlInstructionsLayout);
         pnlInstructionsLayout.setHorizontalGroup(
             pnlInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInstructionsLayout.createSequentialGroup()
-                .addGap(152, 152, 152)
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(pnlInstructionsLayout.createSequentialGroup()
+                .addGap(127, 127, 127)
                 .addComponent(jButton1)
-                .addGap(42, 42, 42)
+                .addGap(64, 64, 64)
                 .addComponent(jButton2)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         pnlInstructionsLayout.setVerticalGroup(
             pnlInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInstructionsLayout.createSequentialGroup()
-                .addContainerGap(262, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(pnlInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addGap(109, 109, 109))
+                .addContainerGap())
         );
 
         Play.setText("Play");
@@ -1042,9 +1069,11 @@ public class testTwoPointOne extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEndGameText;
     private javax.swing.JLabel lblTitle;
