@@ -82,6 +82,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
     // Generates text file as game report
     public void generateReport() {
         // src: https://tdsb.elearningontario.ca/d2l/le/lessons/16360232/topics/125463885
+        String strEndResult = "";
         try {
             OutputStream fout= new FileOutputStream("gameReport.xml");
             OutputStream bout= new BufferedOutputStream(fout);
@@ -124,7 +125,16 @@ public class testTwoPointOne extends javax.swing.JFrame {
         catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        txtEndResult.setText("Player balance: " + Integer.toString(userTotal) + "\nComputer balance: " + Integer.toString(userTotal));
+        
+        if(userTotal>computerTotal){
+            strEndResult += "Winner: User\n";
+        } else if(computerTotal<userTotal){
+            strEndResult += "Winner: Computer\n";
+        } else {
+            strEndResult += "Tie!\n";
+        }
+        strEndResult += "Player balance: " + Integer.toString(userTotal) + "\nComputer balance: " + Integer.toString(userTotal);
+        txtEndResult.setText(strEndResult);
     }
     
     //method to get first letter input from user and changing it to caps
