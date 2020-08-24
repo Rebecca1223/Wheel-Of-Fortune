@@ -893,6 +893,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayActionPerformed
+        Play.setEnabled(false);
         for (int i = 0; i < 25; i++) { //for loop
             enter[i] = false; //sets all indexes of the array to false
         }
