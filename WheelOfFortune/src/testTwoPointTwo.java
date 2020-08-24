@@ -390,26 +390,26 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         lblTitle = new javax.swing.JLabel();
         btnPlay = new javax.swing.JButton();
         btnInstructions = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lblWheel = new javax.swing.JLabel();
+        lblWelcome = new javax.swing.JLabel();
+        lblCourseCode = new javax.swing.JLabel();
         pnlInstructions = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
+        btnStartGame = new javax.swing.JButton();
+        btnReturnMainMenu = new javax.swing.JButton();
+        lblInstructions = new javax.swing.JLabel();
         pnlGame = new javax.swing.JPanel();
         Play = new javax.swing.JButton();
         GuessPhrase = new javax.swing.JButton();
         GuessVowel = new javax.swing.JButton();
         UserMoney = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblPhrase = new javax.swing.JLabel();
+        lblWheelAmount = new javax.swing.JLabel();
+        lblYourGuess = new javax.swing.JLabel();
+        lblYourMoney = new javax.swing.JLabel();
         Guess = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        lblComputerMoney = new javax.swing.JLabel();
         GuessConsonant = new javax.swing.JButton();
         Instructions = new javax.swing.JTextField();
         Wheel = new javax.swing.JTextField();
@@ -419,7 +419,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         pnlEnd = new javax.swing.JPanel();
         lblEndGameText = new javax.swing.JLabel();
         btnGenerateReport = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
         pnlGameResult = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtEndResult = new javax.swing.JTextArea();
@@ -435,7 +435,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         lblTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/wheeloffortune.png"))); // NOI18N
 
         btnPlay.setBackground(new java.awt.Color(204, 153, 0));
-        btnPlay.setFont(new java.awt.Font("Malgun Gothic Semilight", 0, 18)); // NOI18N
+        btnPlay.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 18)); // NOI18N
         btnPlay.setForeground(new java.awt.Color(153, 51, 0));
         btnPlay.setText("Play");
         btnPlay.addActionListener(new java.awt.event.ActionListener() {
@@ -445,7 +445,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         });
 
         btnInstructions.setBackground(new java.awt.Color(204, 153, 0));
-        btnInstructions.setFont(new java.awt.Font("Malgun Gothic Semilight", 0, 18)); // NOI18N
+        btnInstructions.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 18)); // NOI18N
         btnInstructions.setForeground(new java.awt.Color(153, 51, 0));
         btnInstructions.setText("Instructions");
         btnInstructions.addActionListener(new java.awt.event.ActionListener() {
@@ -454,13 +454,13 @@ public class testTwoPointTwo extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setPreferredSize(new java.awt.Dimension(200, 200));
+        lblWheel.setPreferredSize(new java.awt.Dimension(200, 200));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 51, 0));
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/welcometo.png"))); // NOI18N
+        lblWelcome.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        lblWelcome.setForeground(new java.awt.Color(153, 51, 0));
+        lblWelcome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/welcometo.png"))); // NOI18N
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICS4U.png"))); // NOI18N
+        lblCourseCode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICS4U.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlStartLayout = new javax.swing.GroupLayout(pnlStart);
         pnlStart.setLayout(pnlStartLayout);
@@ -473,13 +473,13 @@ public class testTwoPointTwo extends javax.swing.JFrame {
                         .addComponent(lblTitle))
                     .addGroup(pnlStartLayout.createSequentialGroup()
                         .addGap(144, 144, 144)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblCourseCode, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlStartLayout.createSequentialGroup()
                         .addGap(160, 160, 160)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlStartLayout.createSequentialGroup()
                         .addGap(369, 369, 369)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblWheel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlStartLayout.createSequentialGroup()
                         .addGap(412, 412, 412)
                         .addGroup(pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,13 +493,13 @@ public class testTwoPointTwo extends javax.swing.JFrame {
             pnlStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlStartLayout.createSequentialGroup()
                 .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblCourseCode, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblWheel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
@@ -529,25 +529,27 @@ public class testTwoPointTwo extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jButton2.setBackground(new java.awt.Color(204, 102, 0));
-        jButton2.setForeground(new java.awt.Color(153, 51, 0));
-        jButton2.setText("Start game");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnStartGame.setBackground(new java.awt.Color(204, 102, 0));
+        btnStartGame.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 14)); // NOI18N
+        btnStartGame.setForeground(new java.awt.Color(153, 51, 0));
+        btnStartGame.setText("Start game");
+        btnStartGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnStartGameActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(204, 102, 0));
-        jButton1.setForeground(new java.awt.Color(153, 51, 0));
-        jButton1.setText("Return to main menu");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnReturnMainMenu.setBackground(new java.awt.Color(204, 102, 0));
+        btnReturnMainMenu.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 14)); // NOI18N
+        btnReturnMainMenu.setForeground(new java.awt.Color(153, 51, 0));
+        btnReturnMainMenu.setText("Return to main menu");
+        btnReturnMainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnReturnMainMenuActionPerformed(evt);
             }
         });
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/instructions.png"))); // NOI18N
+        lblInstructions.setIcon(new javax.swing.ImageIcon(getClass().getResource("/instructions.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlInstructionsLayout = new javax.swing.GroupLayout(pnlInstructions);
         pnlInstructions.setLayout(pnlInstructionsLayout);
@@ -560,27 +562,30 @@ public class testTwoPointTwo extends javax.swing.JFrame {
                 .addGroup(pnlInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlInstructionsLayout.createSequentialGroup()
                         .addGap(106, 106, 106)
-                        .addComponent(jButton1)
-                        .addGap(146, 146, 146)
-                        .addComponent(jButton2))
+                        .addComponent(btnReturnMainMenu)
+                        .addGap(97, 97, 97)
+                        .addComponent(btnStartGame))
                     .addGroup(pnlInstructionsLayout.createSequentialGroup()
                         .addGap(197, 197, 197)
-                        .addComponent(jLabel10)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblInstructions)))
+                .addContainerGap(515, Short.MAX_VALUE))
         );
         pnlInstructionsLayout.setVerticalGroup(
             pnlInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInstructionsLayout.createSequentialGroup()
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addGroup(pnlInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addGap(18, 18, 18)
+                .addGroup(pnlInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnReturnMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(btnStartGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(898, Short.MAX_VALUE))
         );
 
+        pnlGame.setBackground(new java.awt.Color(204, 204, 255));
+
+        Play.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 14)); // NOI18N
         Play.setText("Play");
         Play.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -588,6 +593,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
             }
         });
 
+        GuessPhrase.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 14)); // NOI18N
         GuessPhrase.setText("Guess the Phrase");
         GuessPhrase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -595,6 +601,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
             }
         });
 
+        GuessVowel.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 14)); // NOI18N
         GuessVowel.setText("Buy a Vowel");
         GuessVowel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -602,16 +609,22 @@ public class testTwoPointTwo extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Your phrase is:");
+        lblPhrase.setFont(new java.awt.Font("Malgun Gothic Semilight", 0, 14)); // NOI18N
+        lblPhrase.setText("Your phrase is:");
 
-        jLabel6.setText("Wheel:");
+        lblWheelAmount.setFont(new java.awt.Font("Malgun Gothic Semilight", 0, 14)); // NOI18N
+        lblWheelAmount.setText("Wheel:");
 
-        jLabel4.setText("Enter your guess here:");
+        lblYourGuess.setFont(new java.awt.Font("Malgun Gothic Semilight", 0, 14)); // NOI18N
+        lblYourGuess.setText("Enter your guess here:");
 
-        jLabel2.setText("You currently have ($):");
+        lblYourMoney.setFont(new java.awt.Font("Malgun Gothic Semilight", 0, 14)); // NOI18N
+        lblYourMoney.setText("You currently have ($):");
 
-        jLabel5.setText("The Computer currently have ($):");
+        lblComputerMoney.setFont(new java.awt.Font("Malgun Gothic Semilight", 0, 14)); // NOI18N
+        lblComputerMoney.setText("The Computer currently have ($):");
 
+        GuessConsonant.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 14)); // NOI18N
         GuessConsonant.setText("Guess a Consonant");
         GuessConsonant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -619,6 +632,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
             }
         });
 
+        Submit.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 14)); // NOI18N
         Submit.setText("Submit Guess");
         Submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -638,22 +652,15 @@ public class testTwoPointTwo extends javax.swing.JFrame {
                             .addComponent(Wheel, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Phrase)))
                     .addGroup(pnlGameLayout.createSequentialGroup()
-                        .addGroup(pnlGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlGameLayout.createSequentialGroup()
-                                .addGap(240, 240, 240)
-                                .addGroup(pnlGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Play)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(pnlGameLayout.createSequentialGroup()
-                                .addGap(236, 236, 236)
-                                .addComponent(jLabel1)))
+                        .addGap(236, 236, 236)
+                        .addComponent(lblPhrase)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(pnlGameLayout.createSequentialGroup()
                 .addGap(91, 91, 91)
-                .addComponent(jLabel2)
+                .addComponent(lblYourMoney)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
+                .addComponent(lblComputerMoney)
                 .addGap(36, 36, 36))
             .addGroup(pnlGameLayout.createSequentialGroup()
                 .addGap(112, 112, 112)
@@ -675,32 +682,41 @@ public class testTwoPointTwo extends javax.swing.JFrame {
                 .addGap(18, 18, 18))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlGameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE)
+                .addComponent(lblYourGuess)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Guess, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(pnlGameLayout.createSequentialGroup()
-                .addGap(228, 228, 228)
-                .addComponent(Submit)
+                .addGroup(pnlGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlGameLayout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(Submit))
+                    .addGroup(pnlGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(pnlGameLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(lblWheelAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlGameLayout.createSequentialGroup()
+                            .addGap(248, 248, 248)
+                            .addComponent(Play))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlGameLayout.setVerticalGroup(
             pnlGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlGameLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(11, 11, 11)
                 .addComponent(Play)
-                .addGap(7, 7, 7)
-                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblWheelAmount)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Wheel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
+                .addComponent(lblPhrase)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Phrase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(pnlGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5))
+                    .addComponent(lblYourMoney)
+                    .addComponent(lblComputerMoney))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UserMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -715,26 +731,30 @@ public class testTwoPointTwo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Guess, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                    .addComponent(lblYourGuess))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Submit)
                 .addContainerGap())
         );
 
+        pnlEnd.setBackground(new java.awt.Color(204, 204, 255));
+
         lblEndGameText.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblEndGameText.setText("<html><center>Thank you for playing Wheel of Fortune!</center></html>");
 
-        btnGenerateReport.setText("Generate game report");
+        btnGenerateReport.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 14)); // NOI18N
+        btnGenerateReport.setText("Generate Game Report");
         btnGenerateReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerateReportActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Exit");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnExit.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 14)); // NOI18N
+        btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnExitActionPerformed(evt);
             }
         });
 
@@ -750,7 +770,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
                             .addComponent(btnGenerateReport)
                             .addGroup(pnlEndLayout.createSequentialGroup()
                                 .addGap(44, 44, 44)
-                                .addComponent(jButton4))))
+                                .addComponent(btnExit))))
                     .addGroup(pnlEndLayout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addComponent(lblEndGameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -761,18 +781,21 @@ public class testTwoPointTwo extends javax.swing.JFrame {
             .addGroup(pnlEndLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblEndGameText, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addComponent(btnGenerateReport)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4)
+                .addComponent(btnExit)
                 .addGap(147, 147, 147))
         );
+
+        pnlGameResult.setBackground(new java.awt.Color(204, 204, 255));
 
         txtEndResult.setEditable(false);
         txtEndResult.setColumns(20);
         txtEndResult.setRows(5);
         jScrollPane1.setViewportView(txtEndResult);
 
+        btnExitGameResult.setFont(new java.awt.Font("Malgun Gothic Semilight", 1, 14)); // NOI18N
         btnExitGameResult.setText("Exit");
         btnExitGameResult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -781,7 +804,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         });
 
         lblGameResults.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblGameResults.setText("Game Results");
+        lblGameResults.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GameResults.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlGameResultLayout = new javax.swing.GroupLayout(pnlGameResult);
         pnlGameResult.setLayout(pnlGameResultLayout);
@@ -794,11 +817,11 @@ public class testTwoPointTwo extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(88, 88, 88))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlGameResultLayout.createSequentialGroup()
-                        .addComponent(btnExitGameResult)
-                        .addGap(253, 253, 253))
+                        .addComponent(lblGameResults)
+                        .addGap(152, 152, 152))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlGameResultLayout.createSequentialGroup()
-                        .addComponent(lblGameResults, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(226, 226, 226))))
+                        .addComponent(btnExitGameResult, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(231, 231, 231))))
         );
         pnlGameResultLayout.setVerticalGroup(
             pnlGameResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -809,7 +832,7 @@ public class testTwoPointTwo extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(btnExitGameResult)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlContainerLayout = new javax.swing.GroupLayout(pnlContainer);
@@ -1065,22 +1088,22 @@ public class testTwoPointTwo extends javax.swing.JFrame {
         pnlInstructions.setVisible(true);
     }//GEN-LAST:event_btnInstructionsActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnReturnMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnMainMenuActionPerformed
         // TODO add your handling code here:
         hideAll();
         pnlStart.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnReturnMainMenuActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnStartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartGameActionPerformed
         // TODO add your handling code here:
         hideAll();
         pnlGame.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnStartGameActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnExitGameResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitGameResultActionPerformed
         // TODO add your handling code here:
@@ -1141,28 +1164,28 @@ public class testTwoPointTwo extends javax.swing.JFrame {
     private static javax.swing.JButton Submit;
     private static javax.swing.JTextField UserMoney;
     private static javax.swing.JTextField Wheel;
+    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnExitGameResult;
     private javax.swing.JButton btnGenerateReport;
     private javax.swing.JButton btnInstructions;
     private javax.swing.JButton btnPlay;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btnReturnMainMenu;
+    private javax.swing.JButton btnStartGame;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblComputerMoney;
+    private javax.swing.JLabel lblCourseCode;
     private javax.swing.JLabel lblEndGameText;
     private javax.swing.JLabel lblGameResults;
+    private javax.swing.JLabel lblInstructions;
+    private javax.swing.JLabel lblPhrase;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel lblWelcome;
+    private javax.swing.JLabel lblWheel;
+    private javax.swing.JLabel lblWheelAmount;
+    private javax.swing.JLabel lblYourGuess;
+    private javax.swing.JLabel lblYourMoney;
     private javax.swing.JPanel pnlContainer;
     private javax.swing.JPanel pnlEnd;
     private javax.swing.JPanel pnlGame;
