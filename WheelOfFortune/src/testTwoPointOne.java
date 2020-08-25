@@ -17,7 +17,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
 
     public static Object[] options = {"OK"};
     public static char alphabet[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-    public static String[] phrases = {"PHILLY CHEESE STEAK", "SAUSAGE AND EGGDS", "BOWL OF RAMEN", "BAKED POTATO", "CHICKEN WINGS", "BUCKET OF CHICKEN", "ONION RINGS", "BIRTHDAY CAKE", "CARROT CAKE", "SPONGE CAKE", "BURGER AND FRIES", "FISH AND CHIPS", "BARBEQUE CHIPS", "TOMATO CHIPS", "TURKEY DINNER", "PIZZA AND DIP", "FRIED RICE", "BUBBLE TEA", "HOT CHOCOLATE", "MEXICAN BURRITO", "HARD SHELL TACO", "CHICKEN NUGGETS", "CHOCOLATE FUDGE", "STRAWBERRY WAFFLE", "EGG TARTS"};
+    public static String[] phrases = {"ASSOCIATION FOR COMPUTING MACHINERY", "BLACK BOX", "HELLO WORLD", "COMMAND LINE", "COLLABORATIVE RESEARCH", "COMPUTER SCIENCE", "ETHICAL COMPUTER USE", "OBJECT ORIENTED PROGRAMMING", "CODE OF ETHICS", "INTEGERS AND STRINGS", "GLOBAL VARIABLES", "LOCAL VARIABLES", "LOOP STRUCTURES", "SELECTION STRUCTURES", "ARRAY AND ARRAYLIST", "TWO DIMENSIONAL ARRAY", "ASSOCIATIVE ARRAY", "DATA OBJECT", "RECURSION ALGORITHM", "LINEAR AND BINARY SEARCH", "COMPARISON SORT", "EXTENSIBLE MARKUP LANGUAGE", "TRY AND CATCH", "GRAPHICAL USER INTERFACE", "FEASIBILITY STUDY"};
     public static int[] spinner = {500, 520, 540, 560, 580, 600, 620, 640, 660, 680, 700, 720, 740, 760, 780, 800, 820, 840, 860, 880, 900, 0, 0, 10, 3000};
     public static boolean enter[] = new boolean[26]; //boolean array used when checking if letter has been guessed already
     public static Random randGen = new Random();
