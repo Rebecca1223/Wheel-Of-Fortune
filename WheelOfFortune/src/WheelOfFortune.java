@@ -110,7 +110,7 @@ public class WheelOfFortune extends javax.swing.JFrame {
                 out.write("<winner>User</winner>\r\n");
             } else if (computerTotal < userTotal) {
                 out.write("<winner>Computer</winner>\r\n");
-            } else {
+            } else if (userTotal == computerTotal) {
                 out.write("<winner>Tie</winner>\r\n");
             }
             out.write("</result>\r\n");
