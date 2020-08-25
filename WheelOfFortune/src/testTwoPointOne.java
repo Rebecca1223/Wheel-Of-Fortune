@@ -1,27 +1,11 @@
 
 import javax.swing.JOptionPane;
-import java.util.Random; //importing RNG method
+import java.util.Random; 
 import java.io.*;
 import org.jdom.*;
 import org.jdom.input.*;
 import java.util.*;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
-
-        Object[] options = {"OK"};
-        int n = JOptionPane.showOptionDialog(null, "Message here ",null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-        if (n==0) {
-            System.out.println ("this works");
-        }
-
- */
-/**
- *
- * @author acceb
- */
 public class testTwoPointOne extends javax.swing.JFrame {
 
     public static Object[] options = {"OK"};
@@ -29,7 +13,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
     public static String[] phrases = {"PHILLY CHEESE STEAK", "SAUSAGE AND EGGDS", "BOWL OF RAMEN", "BAKED POTATO", "CHICKEN WINGS", "BUCKET OF CHICKEN", "ONION RINGS", "BIRTHDAY CAKE", "CARROT CAKE", "SPONGE CAKE", "BURGER AND FRIES", "FISH AND CHIPS", "BARBEQUE CHIPS", "TOMATO CHIPS", "TURKEY DINNER", "PIZZA AND DIP", "FRIED RICE", "BUBBLE TEA", "HOT CHOCOLATE", "MEXICAN BURRITO", "HARD SHELL TACO", "CHICKEN NUGGETS", "CHOCOLATE FUDGE", "STRAWBERRY WAFFLE", "EGG TARTS"};
     public static int[] spinner = {500, 520, 540, 560, 580, 600, 620, 640, 660, 680, 700, 720, 740, 760, 780, 800, 820, 840, 860, 880, 900, 0, 0, 10, 3000};
     public static boolean enter[] = new boolean[26]; //boolean array used when checking if letter has been guessed already
-    public static Random randGen = new Random(); //random number generator declaration
+    public static Random randGen = new Random();
     public static char[] phraseC;
     public static char[] phraseS;
 
@@ -179,24 +163,18 @@ public class testTwoPointOne extends javax.swing.JFrame {
         CompMoney.setText(Integer.toString(computerTotal));
 
         rngSpin = randGen.nextInt(25);
-        if (0 <= rngSpin && rngSpin <= 20) { //condition, if met, proceed
+        if (0 <= rngSpin && rngSpin <= 20) { 
             Wheel.setText("You landed on $" + spinner[rngSpin] + " amount!");
-            System.out.println("You landed on $" + spinner[rngSpin] + " amount!"); //Print this
-        } else if (rngSpin == 21 || rngSpin == 22) { //condition, if met, proceed
+        } else if (rngSpin == 21 || rngSpin == 22) { 
             Wheel.setText("You went bankrupt");
             userTotal = 0;
             UserMoney.setText(Integer.toString(userTotal));
             computer();
-            System.out.println("You went bankrupt"); //Print this
-//      break;
-        } else if (rngSpin == 23) { //condition, if met, proceed
+        } else if (rngSpin == 23) { 
             Wheel.setText("You landed on skip a turn");
             computer();
-            System.out.println("You landed on skip a turn"); //Print this
-//      break;
-        } else if (rngSpin == 24) { //condition, if met, proceed
+        } else if (rngSpin == 24) { 
             Wheel.setText("You landed on a top dollar value of $" + spinner[24] + " amount!");
-            System.out.println("You landed on a top dollar value of $" + spinner[24] + " amount!"); //Print this
         }
 
         type = 0;
@@ -228,7 +206,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
         } else if ((0 <= rngSpin && rngSpin <= 20) || rngSpin == 24) {
             int compChoice = randGen.nextInt(4) + 1;
             if (1 <= compChoice && compChoice < 4) {
-                int cLetter = randGen.nextInt(5) + 1; //assigns RNG number as value for variable
+                int cLetter = randGen.nextInt(5) + 1;
                 if (cLetter == 5 && computerTotal > 249) {
                     computerTotal = computerTotal - 250;
                     CompMoney.setText(Integer.toString(computerTotal));
@@ -237,17 +215,17 @@ public class testTwoPointOne extends javax.swing.JFrame {
                     char vowel = vowels[rngVowel];
                     display = "The computer chose to buy a vowel. \n It wishes to buy: " + vowel + "\n";
                     tof = Methods.validateC(phrase, vowel, alphabet, enter, phraseS);
-                    if (tof) { //condition, if tof is true, proceed
+                    if (tof) { 
                         display = display + "That letter has already been guessed. \n The Computer lost its turn \n\n Your turn!";
                         int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (n == 0) {
                             userPlay();
                         }
                     } else {
-                        Methods.record(vowel, enter, alphabet); //uses record method
+                        Methods.record(vowel, enter, alphabet); 
                         Methods.gameBoard(phrase, phraseC, phraseS, vowel, spinner, rngSpin);
 
-                        if (numberC > 0) { //condition, if met, proceed
+                        if (numberC > 0) { 
                             display = display + "There are " + numberC + " of those letters!";
                             int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                             if (n == 0) {
@@ -255,7 +233,6 @@ public class testTwoPointOne extends javax.swing.JFrame {
                                     int x = JOptionPane.showOptionDialog(null, "Game Over", null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                                     if (x == 0) {
                                         //go to end game screen
-                                        System.out.println("Game over");
                                         hideAll();
                                         pnlEnd.setVisible(true);
                                         showWinner();
@@ -266,8 +243,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
                                     computer();
                                 }
                             }
-                        } else if (numberC == 0) {  //condition, if met, proceed
-                            System.out.println("Sorry, that letter does not appear in this phrase"); //Print this
+                        } else if (numberC == 0) {
                             display = display + "That letter does not appear in this phrase. \n\n Your turn!";
                             int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                             if (n == 0) {
@@ -277,23 +253,23 @@ public class testTwoPointOne extends javax.swing.JFrame {
                     }
                 } else {
                     display = "The Wheel landed on: $" + spinner[rngSpin] + "\n The Computer chooses to guess a consonant \n";
-                    int rngAlpha = randGen.nextInt(21); //assigns RNG number as value for variable
-                    char consonant[] = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'}; //char array declaration and stores all consonant in it
+                    int rngAlpha = randGen.nextInt(21); 
+                    char consonant[] = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'}; 
                     char guessC = consonant[rngAlpha];
                     display = display + "The Computer guesses: " + guessC + "\n";
 
-                    tof = Methods.validateC(phrase, guessC, alphabet, enter, phraseS); //stores return value of validateC method as value for variable
-                    if (tof) { //condition, if tof is true, proceed
+                    tof = Methods.validateC(phrase, guessC, alphabet, enter, phraseS);
+                    if (tof) { 
                         display = display + "That letter has already been guessed. \n The Computer lost its turn \n\n Your turn!";
                         int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (n == 0) {
                             userPlay();
                         }
                     } else {
-                        Methods.record(guessC, enter, alphabet); //uses record method
+                        Methods.record(guessC, enter, alphabet); 
                         Methods.gameBoard(phrase, phraseC, phraseS, guessC, spinner, rngSpin);
 
-                        if (numberC > 0) { //condition, if met, proceed
+                        if (numberC > 0) { 
                             gain = numberC * spinner[rngSpin];
                             display = display + "There are " + numberC + " of those letters! \n The Computer gained " + gain + " dollars!";;
                             int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
@@ -304,7 +280,6 @@ public class testTwoPointOne extends javax.swing.JFrame {
                                     int x = JOptionPane.showOptionDialog(null, "Game Over", null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                                     if (x == 0) {
                                         //go to end game screen
-                                        System.out.println("Game over");
                                         hideAll();
                                         pnlEnd.setVisible(true);
                                         showWinner();
@@ -315,8 +290,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
                                     computer();
                                 }
                             }
-                        } else if (numberC == 0) {  //condition, if met, proceed
-                            System.out.println("Sorry, that letter does not appear in this phrase"); //Print this
+                        } else if (numberC == 0) { 
                             display = display + "That letter does not appear in this phrase. \n\n Your turn!";
                             int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                             if (n == 0) {
@@ -326,8 +300,8 @@ public class testTwoPointOne extends javax.swing.JFrame {
                     }
                 }
             } else if (compChoice == 4) {
-                int rngPhraseC = randGen.nextInt(25); //stores RNG number as value for variable
-                String compPhrase = phrases[rngPhraseC]; //variable declaration and stores index rngPhraseC of phrases array as value for variable
+                int rngPhraseC = randGen.nextInt(25); 
+                String compPhrase = phrases[rngPhraseC]; 
                 display = "The Computer chose to guess the phrase \n It guesses: " + compPhrase + "\n";
                 if (compPhrase.equalsIgnoreCase(phrase)) {
                     display = display + "It was the correct phrase! \n The computer gained $1000 \n\n Game Over";
@@ -335,7 +309,6 @@ public class testTwoPointOne extends javax.swing.JFrame {
                     int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                     if (n == 0) {
                         //go to end game screen
-                        System.out.println("Game Over");
                         hideAll();
                         pnlEnd.setVisible(true);
                         showWinner();
@@ -831,21 +804,21 @@ public class testTwoPointOne extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayActionPerformed
-        for (int i = 0; i < 25; i++) { //for loop
-            enter[i] = false; //sets all indexes of the array to false
+        for (int i = 0; i < 25; i++) { 
+            enter[i] = false; 
         }
-        rngPhrase = randGen.nextInt(24); //stores the RNG number as value for variable
+        rngPhrase = randGen.nextInt(24); 
         phrase = phrases[rngPhrase];
         phraseC = new char[phrase.length()]; //stores the board
         phraseS = new char[phrase.length()]; //stores the original phrase
 
-        for (int i = 0; i < phrase.length(); i++) { //for loop
+        for (int i = 0; i < phrase.length(); i++) { 
             phraseC[i] = phrase.charAt(i); //splits the phrase and stores each character to the indexes of array
             phraseS[i] = phrase.charAt(i); //splits the phrase and stores each character to the indexes of array
         }
 
-        for (int i = 0; i < phrase.length(); i++) { //for loop
-            if (phraseS[i] != ' ') { //condition, if met proceed
+        for (int i = 0; i < phrase.length(); i++) { 
+            if (phraseS[i] != ' ') { 
                 phraseS[i] = '#'; //changes the phrase (in char array) to a series of hashtags
             }
         }
@@ -858,7 +831,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
 
         userPlay();
 
-        System.out.println(phrase);
+        System.out.println(phrase); //for testing purposes
     }//GEN-LAST:event_PlayActionPerformed
 
     private void GuessVowelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuessVowelActionPerformed
@@ -907,23 +880,21 @@ public class testTwoPointOne extends javax.swing.JFrame {
             Methods.iChange(guess);
 
             if (type == 1) {
-                tof = Methods.validateC(phrase, guessL, alphabet, enter, phraseS); //assigns return value of validateC method as value for variable
+                tof = Methods.validateC(phrase, guessL, alphabet, enter, phraseS); 
                 userTotal = userTotal - 250;
                 UserMoney.setText(Integer.toString(userTotal));
 
                 if (Methods.checkVowel(guessL) == false) {
                     Instructions.setText("That is not a vowel! You lost your turn..");
                     computer();
-                } else if (tof) { //condition, if met, proceed
-                    System.out.println("That letter has already been guessed"); //Print this
+                } else if (tof) { 
                     Instructions.setText("That letter has already been guessed");
                     computer();
                 } else {
-                    Methods.record(guessL, enter, alphabet); //uses record method
-                    Methods.gameBoard(phrase, phraseC, phraseS, guessL, spinner, rngSpin); //uses gameboard method
+                    Methods.record(guessL, enter, alphabet); 
+                    Methods.gameBoard(phrase, phraseC, phraseS, guessL, spinner, rngSpin); 
 
-                    if (numberC > 0) { //condition, if met, proceed
-                        System.out.println("Congrats, there are " + numberC + " of those letters!"); //Print this
+                    if (numberC > 0) {
                         display = "Congrats, there are " + numberC + " of those letters!";
                         int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (n == 0) {
@@ -931,7 +902,6 @@ public class testTwoPointOne extends javax.swing.JFrame {
                                 int x = JOptionPane.showOptionDialog(null, "Game Over", null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                                 if (x == 0) {
                                     //go to end game screen
-                                    System.out.println("Game over");
                                     hideAll();
                                     pnlEnd.setVisible(true);
                                     showWinner();
@@ -942,8 +912,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
                                 userPlay();
                             }
                         }
-                    } else if (numberC == 0) {  //condition, if met, proceed
-                        System.out.println("Sorry, that letter does not appear in this phrase"); //Print this
+                    } else if (numberC == 0) {
                         display = "Sorry, that letter does not appear in this phrase";
                         int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (n == 0) {
@@ -952,21 +921,19 @@ public class testTwoPointOne extends javax.swing.JFrame {
                     }
                 }
             } else if (type == 2) {
-                tof = Methods.validateC(phrase, guessL, alphabet, enter, phraseS); //assigns return value of validateC method as value for variable
+                tof = Methods.validateC(phrase, guessL, alphabet, enter, phraseS); 
 
                 if (Methods.checkVowel(guessL)) {
                     Instructions.setText("That is not a consonant! You lost your turn..");
                     computer();
-                } else if (tof) { //condition, if met, proceed
-                    System.out.println("That letter has already been guessed"); //Print this
+                } else if (tof) { 
                     Instructions.setText("That letter has already been guessed");
                     computer();
                 } else {
-                    Methods.record(guessL, enter, alphabet); //uses record method
-                    Methods.gameBoard(phrase, phraseC, phraseS, guessL, spinner, rngSpin); //uses gameboard method
-                    if (numberC > 0) { //condition, if met, proceed
-                        System.out.println("Congrats, there are " + numberC + " of those letters!"); //Print this
-                        gain = numberC * spinner[rngSpin]; //value assignment to variable
+                    Methods.record(guessL, enter, alphabet); 
+                    Methods.gameBoard(phrase, phraseC, phraseS, guessL, spinner, rngSpin); 
+                    if (numberC > 0) {
+                        gain = numberC * spinner[rngSpin]; 
                         display = "Congrats, there are " + numberC + " of those letters! \n You gained " + gain + " dollars!";
                         int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (n == 0) {
@@ -976,7 +943,6 @@ public class testTwoPointOne extends javax.swing.JFrame {
                                 int x = JOptionPane.showOptionDialog(null, "Game Over", null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                                 if (x == 0) {
                                     //go to end game screen
-                                    System.out.println("Game over");
                                     hideAll();
                                     pnlEnd.setVisible(true);
                                     showWinner();
@@ -987,8 +953,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
                                 userPlay();
                             }
                         }
-                    } else if (numberC == 0) {  //condition, if met, proceed
-                        System.out.println("Sorry, that letter does not appear in this phrase"); //Print this
+                    } else if (numberC == 0) {
                         display = "Sorry, that letter does not appear in this phrase";
                         int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (n == 0) {
@@ -1002,7 +967,6 @@ public class testTwoPointOne extends javax.swing.JFrame {
                     int n = JOptionPane.showOptionDialog(null, display, null, JOptionPane.PLAIN_MESSAGE, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                     if (n == 0) {
                         //go to end game screen
-                        System.out.println("Game over");
                         userTotal = userTotal + 1000;
                         hideAll();
                         pnlEnd.setVisible(true);
@@ -1025,35 +989,29 @@ public class testTwoPointOne extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPlayActionPerformed
 
     private void btnInstructionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstructionsActionPerformed
-        // TODO add your handling code here:
         hideAll();
         pnlInstructions.setVisible(true);
     }//GEN-LAST:event_btnInstructionsActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         hideAll();
         pnlStart.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
         hideAll();
         pnlGame.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnExitGameResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitGameResultActionPerformed
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnExitGameResultActionPerformed
 
     private void btnGenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateReportActionPerformed
-        // TODO add your handling code here:
         hideAll();
         pnlGameResult.setVisible(true);
         generateReport();

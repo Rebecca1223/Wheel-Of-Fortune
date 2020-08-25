@@ -42,7 +42,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="pnlStart" alignment="0" max="32767" attributes="0"/>
+              <Component id="pnlStart" alignment="0" pref="606" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Component id="pnlGame" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -121,7 +121,7 @@
                               <Component id="btnInstructions" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="181" max="32767" attributes="0"/>
+                      <EmptySpace pref="187" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
