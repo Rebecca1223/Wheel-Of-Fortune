@@ -16,7 +16,7 @@ public class Methods {
      */
     public static void iChange(String guess) {
         guess = guess.toUpperCase(); //changes what user enters to all uppercase
-        testTwoPointOne.guessL = guess.charAt(0); //assigns only the first letter of what the user enters as value for variable
+        WheelOfFortune.guessL = guess.charAt(0); //assigns only the first letter of what the user enters as value for variable
     }
     
     /*
@@ -26,15 +26,15 @@ public class Methods {
     Post-Con: Returns true if the letter has already been guessed before
      */
     public static boolean validateC(String phrase, char guessL, char[] alphabet, boolean[] enter, char[] phraseS) {
-        testTwoPointOne.tof = false; //resets variable to false
+        WheelOfFortune.tof = false; //resets variable to false
         for (int i = 0; i < 26; i++) { 
             if (guessL == alphabet[i]) { //matches the letter guessed to the alphabet array
                 if (enter[i]) { //if the index is true
-                    testTwoPointOne.tof = true; //variable becomes true
+                    WheelOfFortune.tof = true; //variable becomes true
                 }
             }
         }
-        return testTwoPointOne.tof; //returns value of tof
+        return WheelOfFortune.tof; //returns value of tof
     }
     
     /*
@@ -74,11 +74,11 @@ public class Methods {
     Post-Con: Counts how many of the letters are in the phrase and reveal them 
      */
     public static void gameBoard(String phrase, char[] phraseC, char[] phraseS, char guessL, int[] spinner, int rngSpin) {
-        testTwoPointOne.numberC = 0; 
+        WheelOfFortune.numberC = 0; 
         for (int i = 0; i < phrase.length(); i++) { 
             if (guessL == phraseC[i]) { 
                 phraseS[i] = guessL; //changes the gameboard to reveal guessed letter
-                testTwoPointOne.numberC++; //counts number of times the guessed letter appears in the phrase
+                WheelOfFortune.numberC++; //counts number of times the guessed letter appears in the phrase
             }
         }
     }
@@ -91,8 +91,8 @@ public class Methods {
      */
     public static boolean boardFinish(String phrase, char[] phraseS) {
         boolean boardF = false; //resets variable value to false
-        testTwoPointOne.board = String.copyValueOf(phraseS); //concats all values in char array and assigns it as value for string variable
-        if (testTwoPointOne.board.equalsIgnoreCase(phrase)) { 
+        WheelOfFortune.board = String.copyValueOf(phraseS); //concats all values in char array and assigns it as value for string variable
+        if (WheelOfFortune.board.equalsIgnoreCase(phrase)) { 
             boardF = true; 
         }
         return boardF; 
