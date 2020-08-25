@@ -105,7 +105,11 @@ public class testTwoPointOne extends javax.swing.JFrame {
                 out.write("<winner>Tie</winner>\r\n");
             }
             out.write("</result>\r\n");
-
+            
+            out.write("<result>\r\n");
+            out.write("<phrase>" + phrase + "</phrase>\r\n");
+            out.write("</result> \r\n");
+            
             out.write("<player>\r\n");
             out.write("<name>User</name>\r\n");
             out.write("<balance>" + Integer.toString(userTotal) + "</balance>\r\n");
@@ -139,8 +143,11 @@ public class testTwoPointOne extends javax.swing.JFrame {
 
             for (int i = 0; i < list1.size(); i++) {
                Element node = (Element) list1.get(i);
-
-               strEndResult += "Winner: " + node.getChildText("winner") + "\n";
+               if(i == 0){
+               strEndResult += "Winner: " + node.getChildText("winner") + "\n\n";
+               } else {
+               strEndResult += "Phrase: " + node.getChildText("phrase") + "\n\n";
+               }
             }
             
             for (int j = 0; j < list2.size(); j++) {
