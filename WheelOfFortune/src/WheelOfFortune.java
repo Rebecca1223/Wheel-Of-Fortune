@@ -391,6 +391,8 @@ public class WheelOfFortune extends javax.swing.JFrame {
         lblEndGameText = new javax.swing.JLabel();
         btnGenerateReport = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         pnlGameResult = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtEndResult = new javax.swing.JTextArea();
@@ -425,6 +427,7 @@ public class WheelOfFortune extends javax.swing.JFrame {
         });
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SpinnerImage.png"))); // NOI18N
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel7.setPreferredSize(new java.awt.Dimension(200, 200));
 
@@ -719,23 +722,39 @@ public class WheelOfFortune extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("All information regarding the game and rules belong to the original Wheel Of Fortune Gameshow. ");
+
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("More information can be found at: https://www.wheeloffortune.com/");
+
         javax.swing.GroupLayout pnlEndLayout = new javax.swing.GroupLayout(pnlEnd);
         pnlEnd.setLayout(pnlEndLayout);
         pnlEndLayout.setHorizontalGroup(
             pnlEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEndLayout.createSequentialGroup()
+                .addGroup(pnlEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEndLayout.createSequentialGroup()
+                        .addGroup(pnlEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlEndLayout.createSequentialGroup()
+                                .addGap(224, 224, 224)
+                                .addComponent(btnGenerateReport))
+                            .addGroup(pnlEndLayout.createSequentialGroup()
+                                .addGap(270, 270, 270)
+                                .addComponent(jButton4)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEndLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEndLayout.createSequentialGroup()
                 .addContainerGap(64, Short.MAX_VALUE)
                 .addComponent(lblEndGameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57))
             .addGroup(pnlEndLayout.createSequentialGroup()
-                .addGroup(pnlEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlEndLayout.createSequentialGroup()
-                        .addGap(224, 224, 224)
-                        .addComponent(btnGenerateReport))
-                    .addGroup(pnlEndLayout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addComponent(jButton4)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         pnlEndLayout.setVerticalGroup(
             pnlEndLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -746,7 +765,11 @@ public class WheelOfFortune extends javax.swing.JFrame {
                 .addComponent(btnGenerateReport)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11)
+                .addGap(14, 14, 14))
         );
 
         pnlGameResult.setBackground(new java.awt.Color(230, 230, 255));
@@ -1113,6 +1136,8 @@ public class WheelOfFortune extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
