@@ -63,7 +63,7 @@ public class WheelOfFortune extends javax.swing.JFrame {
         String strWinnerOutput = "<html><center>";
         if (userTotal > computerTotal) {
             strWinnerOutput += "Winner: User<br/>";
-        } else if (computerTotal < userTotal) {
+        } else if (computerTotal > userTotal) {
             strWinnerOutput += "Winner: Computer<br/>";
         } else {
             strWinnerOutput += "Tie!<br/>";
