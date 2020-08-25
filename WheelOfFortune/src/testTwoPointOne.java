@@ -1,3 +1,10 @@
+/*
+* modified 20200824
+* date     20200824
+* @author  Group 3 (Rebecca, Jeffery, Maximilian, Imad, Gracie)
+* @version 2.0
+* @see    Assignment 4 Culminating
+*/
 
 import javax.swing.JOptionPane;
 import java.util.Random; 
@@ -42,8 +49,13 @@ public class testTwoPointOne extends javax.swing.JFrame {
         hideAll();
         pnlStart.setVisible(true);
     }
-
-    // Shows winner in end screen
+    
+    /*
+    Jeffery
+    Purpose: Shows winner in end screen
+    Pre-Con: Values in userTotal and computerTotal
+    Post-Con: Determines who has more money and displays winner
+     */
     public void showWinner() {
         String strWinnerOutput = "<html><center>";
         if (userTotal > computerTotal) {
@@ -56,8 +68,13 @@ public class testTwoPointOne extends javax.swing.JFrame {
         strWinnerOutput += "Thank you for playing Wheel of Fortune!</center></html>";
         lblEndGameText.setText(strWinnerOutput);
     }
-
-    // Hides all screens
+    
+    /*
+    Jeffery
+    Purpose: Hides all panels
+    Pre-Con: Screens exist
+    Post-Con: All panels become hidden
+     */
     public void hideAll() {
         pnlStart.setVisible(false);
         pnlInstructions.setVisible(false);
@@ -66,7 +83,12 @@ public class testTwoPointOne extends javax.swing.JFrame {
         pnlGameResult.setVisible(false);
     }
 
-    // Generates text file as game report
+    /*
+    Jeffery
+    Purpose: Generates text file as game report
+    Pre-Con: Values in userTotal and computerTotal
+    Post-Con: Creates XML File and stores information
+     */
     public void generateReport() {
         // src: https://tdsb.elearningontario.ca/d2l/le/lessons/16360232/topics/125463885
         String strEndResult = "";
@@ -145,19 +167,15 @@ public class testTwoPointOne extends javax.swing.JFrame {
         } catch (JDOMException jdomex) {
             System.out.println(jdomex.getMessage());
         }
-        
-        /*if (userTotal > computerTotal) {
-            strEndResult += "Winner: User\n";
-        } else if (computerTotal < userTotal) {
-            strEndResult += "Winner: Computer\n";
-        } else {
-            strEndResult += "Tie!\n";
-        }
-        strEndResult += "Player balance: " + Integer.toString(userTotal) + "\nComputer balance: " + Integer.toString(computerTotal);
-        */
         txtEndResult.setText(strEndResult);
     }
-
+    
+    /*
+    Rebecca
+    Purpose: Spins wheel for money value and prompts user for input
+    Pre-Con: It is the user's turn
+    Post-Con: Displays what value the user landed on in the wheel and prompts user what they would like to guess
+     */
     public void userPlay() {
         UserMoney.setText(Integer.toString(userTotal));
         CompMoney.setText(Integer.toString(computerTotal));
@@ -188,7 +206,13 @@ public class testTwoPointOne extends javax.swing.JFrame {
             GuessPhrase.setEnabled(true);
         }
     }
-
+    
+    /*
+    Rebecca
+    Purpose: The entire computer system the user will play against
+    Pre-Con: The computer's turn
+    Post-Con: Determine what value the computer landed on in the wheel and computer decides what it will guess and checks if it is a valid guess. If not, switches to the user's turn
+     */
     public void computer() {
         rngSpin = randGen.nextInt(25);
         if (rngSpin == 21 || rngSpin == 22) {
@@ -804,6 +828,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayActionPerformed
+        //Rebecca
         for (int i = 0; i < 25; i++) { 
             enter[i] = false; 
         }
@@ -835,6 +860,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
     }//GEN-LAST:event_PlayActionPerformed
 
     private void GuessVowelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuessVowelActionPerformed
+        //Rebecca
         Instructions.setText("Enter your guess below and press Submit");
         GuessVowel.setEnabled(false);
         GuessConsonant.setEnabled(false);
@@ -846,6 +872,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
     }//GEN-LAST:event_GuessVowelActionPerformed
 
     private void GuessConsonantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuessConsonantActionPerformed
+        //Rebecca
         Instructions.setText("Enter your guess below and press Submit");
         GuessVowel.setEnabled(false);
         GuessConsonant.setEnabled(false);
@@ -857,6 +884,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
     }//GEN-LAST:event_GuessConsonantActionPerformed
 
     private void GuessPhraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuessPhraseActionPerformed
+        //Rebecca
         Instructions.setText("Enter your guess below and press Submit");
         GuessVowel.setEnabled(false);
         GuessConsonant.setEnabled(false);
@@ -868,6 +896,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
     }//GEN-LAST:event_GuessPhraseActionPerformed
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
+        //Rebecca
         if (Guess.getText().equals("")) {
             Instructions.setText("Please enter your guess then press Submit");
         } else {
@@ -984,21 +1013,25 @@ public class testTwoPointOne extends javax.swing.JFrame {
     }//GEN-LAST:event_SubmitActionPerformed
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
+        //Jeffery
         hideAll();
         pnlGame.setVisible(true);
     }//GEN-LAST:event_btnPlayActionPerformed
 
     private void btnInstructionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstructionsActionPerformed
+        //Jeffery
         hideAll();
         pnlInstructions.setVisible(true);
     }//GEN-LAST:event_btnInstructionsActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //Jeffery
         hideAll();
         pnlStart.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //Jeffery
         hideAll();
         pnlGame.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -1012,6 +1045,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitGameResultActionPerformed
 
     private void btnGenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateReportActionPerformed
+        //Jeffery
         hideAll();
         pnlGameResult.setVisible(true);
         generateReport();

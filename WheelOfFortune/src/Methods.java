@@ -1,15 +1,33 @@
+/*
+* modified 20200824
+* date     20200824
+* @author  Group 3 (Rebecca, Jeffery, Maximilian, Imad, Gracie)
+* @version 2.0
+* @see    Assignment 4 Culminating
+*/
 
 public class Methods {
-    //method to get first letter input from user and changing it to caps
+    
+    /*
+    Rebecca
+    Purpose: Get the first letter input from user and changing it to caps
+    Pre-Con: An input is received from the user
+    Post-Con: Takes the first letter of the input and capitalize it
+     */
     public static void iChange(String guess) {
         guess = guess.toUpperCase(); //changes what user enters to all uppercase
         testTwoPointOne.guessL = guess.charAt(0); //assigns only the first letter of what the user enters as value for variable
     }
     
-    //method to check if the letter has already beeen guessed before 
+    /*
+    Rebecca
+    Purpose: Checks if the letter has already been guessed before
+    Pre-Con: An input is received from the user
+    Post-Con: Returns true if the letter has already been guessed before
+     */
     public static boolean validateC(String phrase, char guessL, char[] alphabet, boolean[] enter, char[] phraseS) {
         testTwoPointOne.tof = false; //resets variable to false
-        for (int i = 0; i < 26; i++) { //for loop
+        for (int i = 0; i < 26; i++) { 
             if (guessL == alphabet[i]) { //matches the letter guessed to the alphabet array
                 if (enter[i]) { //if the index is true
                     testTwoPointOne.tof = true; //variable becomes true
@@ -19,7 +37,12 @@ public class Methods {
         return testTwoPointOne.tof; //returns value of tof
     }
     
-    //method to check if guess is a consonant
+    /*
+    Rebecca
+    Purpose: Checks whether a letter is a consonant or a vowel
+    Pre-Con: An input is received from the user
+    Post-Con: Returns true if it is a vowel and false if it is not
+     */
     public static boolean checkVowel(char guessL) {
         boolean check;
         if (guessL == 'A' || guessL == 'E' || guessL == 'I' || guessL == 'O' || guessL == 'U') {
@@ -30,35 +53,48 @@ public class Methods {
         return check;
     }
     
-    //method to record the guessed letters
+    /*
+    Rebecca
+    Purpose: Records the guessed letters
+    Pre-Con: An letter guess from user or computer
+    Post-Con: Changes the char array of the phrase to true once the letter has been guessed
+     */
     public static void record(char guessL, boolean[] enter, char[] alphabet) {
-        for (int i = 0; i < 26; i++) { //for loop
+        for (int i = 0; i < 26; i++) { 
             if (guessL == alphabet[i]) { //matches the letter guessed to the alphabet array
                 enter[i] = true; //changes enter array to true; all marked trues are the letters that have been guessed already
             }
         }
     }
     
-    //method to check if the letter guessed is on the gameboard
+    /*
+    Rebecca
+    Purpose: Checks if the letter guessed is on the gameboard and reveal the geussed letters in the phrase
+    Pre-Con: An guess is made by the user or computer
+    Post-Con: Counts how many of the letters are in the phrase and reveal them 
+     */
     public static void gameBoard(String phrase, char[] phraseC, char[] phraseS, char guessL, int[] spinner, int rngSpin) {
-        testTwoPointOne.numberC = 0; //assigning value to variable
-        for (int i = 0; i < phrase.length(); i++) { //for loop
-            if (guessL == phraseC[i]) { //condition, if met, proceed
+        testTwoPointOne.numberC = 0; 
+        for (int i = 0; i < phrase.length(); i++) { 
+            if (guessL == phraseC[i]) { 
                 phraseS[i] = guessL; //changes the gameboard to reveal guessed letter
                 testTwoPointOne.numberC++; //counts number of times the guessed letter appears in the phrase
             }
         }
     }
     
-    //method to start a new round if user decides to finish the board by keep guessing letters
+    /*
+    Rebecca
+    Purpose: Ends the game if all the letters in the phrase are guessed
+    Pre-Con: An guess is made by the user or computer
+    Post-Con: Returns true if all letters are revealed
+     */
     public static boolean boardFinish(String phrase, char[] phraseS) {
         boolean boardF = false; //resets variable value to false
         testTwoPointOne.board = String.copyValueOf(phraseS); //concats all values in char array and assigns it as value for string variable
-        if (testTwoPointOne.board.equalsIgnoreCase(phrase)) { //condition, if met, proceed
-            System.out.println("The board is now revealed"); //print this
-            System.out.println("A new round will now begin"); //print this
-            boardF = true; //sets variable as true
+        if (testTwoPointOne.board.equalsIgnoreCase(phrase)) { 
+            boardF = true; 
         }
-        return boardF; //returns value of variable
+        return boardF; 
     }
 }
