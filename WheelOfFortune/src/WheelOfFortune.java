@@ -7,6 +7,7 @@
 */
 
 import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.util.Random; 
 import java.io.*;
 import org.jdom.*;
@@ -14,7 +15,7 @@ import org.jdom.input.*;
 import java.util.*;
 
 public class WheelOfFortune extends javax.swing.JFrame {
-
+    ImageIcon spinnericon = new ImageIcon("Spinner.gif");
     public static Object[] options = {"OK"};
     public static char alphabet[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
     public static String[] phrases = {"ASSOCIATION FOR COMPUTING MACHINERY", "BLACK BOX", "HELLO WORLD", "COMMAND LINE", "COLLABORATIVE RESEARCH", "COMPUTER SCIENCE", "ETHICAL COMPUTER USE", "OBJECT ORIENTED PROGRAMMING", "CODE OF ETHICS", "INTEGERS AND STRINGS", "GLOBAL VARIABLES", "LOCAL VARIABLES", "LOOP STRUCTURES", "SELECTION STRUCTURES", "ARRAY AND ARRAYLIST", "TWO DIMENSIONAL ARRAY", "ASSOCIATIVE ARRAY", "DATA OBJECT", "RECURSION ALGORITHM", "LINEAR AND BINARY SEARCH", "COMPARISON SORT", "EXTENSIBLE MARKUP LANGUAGE", "TRY AND CATCH", "GRAPHICAL USER INTERFACE", "FEASIBILITY STUDY"};
@@ -45,6 +46,8 @@ public class WheelOfFortune extends javax.swing.JFrame {
         CompMoney.setEditable(false);
         Phrase.setEditable(false);
         Instructions.setEditable(false);
+        
+        jLabel7.setIcon(spinnericon);
 
         hideAll();
         pnlStart.setVisible(true);
@@ -427,7 +430,6 @@ public class WheelOfFortune extends javax.swing.JFrame {
         });
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SpinnerImage.png"))); // NOI18N
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel7.setPreferredSize(new java.awt.Dimension(200, 200));
 
@@ -458,7 +460,7 @@ public class WheelOfFortune extends javax.swing.JFrame {
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlStartLayout.createSequentialGroup()
-                .addGap(0, 159, Short.MAX_VALUE)
+                .addGap(0, 158, Short.MAX_VALUE)
                 .addComponent(btnPlay)
                 .addGap(148, 148, 148)
                 .addComponent(btnInstructions)
@@ -828,7 +830,7 @@ public class WheelOfFortune extends javax.swing.JFrame {
         );
         pnlContainerLayout.setVerticalGroup(
             pnlContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlStart, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
+            .addComponent(pnlStart, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
             .addGroup(pnlContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(pnlGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnlContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
