@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <game>
 <result>
-<winner> User </winner>
+<winner>User</winner>
 </result>
 <player>
-<name> User </name>
-<balance>4740</balance>
+<name>User</name>
+<balance>1000</balance>
 </player> 
 <player>
-<name> Computer </name>
+<name>Computer</name>
 <balance>0</balance>
 </player> 
 </game>

@@ -2,6 +2,9 @@
 import javax.swing.JOptionPane;
 import java.util.Random; //importing RNG method
 import java.io.*;
+import org.jdom.*;
+import org.jdom.input.*;
+import java.util.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -95,21 +98,21 @@ public class testTwoPointOne extends javax.swing.JFrame {
 
             out.write("<result>\r\n");
             if (userTotal > computerTotal) {
-                out.write("<winner> User </winner>\r\n");
+                out.write("<winner>User</winner>\r\n");
             } else if (computerTotal < userTotal) {
-                out.write("<winner> Computer </winner>\r\n");
+                out.write("<winner>Computer</winner>\r\n");
             } else {
-                out.write("<outcome> Tie </outcome>\r\n");
+                out.write("<winner>Tie</winner>\r\n");
             }
             out.write("</result>\r\n");
 
             out.write("<player>\r\n");
-            out.write("<name> User </name>\r\n");
+            out.write("<name>User</name>\r\n");
             out.write("<balance>" + Integer.toString(userTotal) + "</balance>\r\n");
             out.write("</player> \r\n");
 
             out.write("<player>\r\n");
-            out.write("<name> Computer </name>\r\n");
+            out.write("<name>Computer</name>\r\n");
             out.write("<balance>" + Integer.toString(computerTotal) + "</balance>\r\n");
             out.write("</player> \r\n");
             out.write("</game>\r\n");
@@ -123,8 +126,36 @@ public class testTwoPointOne extends javax.swing.JFrame {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+        
+        // src: https://mkyong.com/java/how-to-read-xml-file-in-java-jdom-example/
+        SAXBuilder builder = new SAXBuilder();
+        File xmlFile = new File("gameReport.xml");
+        
+        try {
+            Document document = (Document) builder.build(xmlFile);
+            Element rootNode = document.getRootElement();
+            List list1 = rootNode.getChildren("result");
+            List list2 = rootNode.getChildren("player");
 
-        if (userTotal > computerTotal) {
+            for (int i = 0; i < list1.size(); i++) {
+               Element node = (Element) list1.get(i);
+
+               strEndResult += "Winner: " + node.getChildText("winner") + "\n";
+            }
+            
+            for (int j = 0; j < list2.size(); j++) {
+               Element node = (Element) list2.get(j);
+
+               strEndResult += node.getChildText("name") + " balance: " + (node.getChildText("balance")) + "\n";
+            }
+
+        } catch (IOException io) {
+            System.out.println(io.getMessage());
+        } catch (JDOMException jdomex) {
+            System.out.println(jdomex.getMessage());
+        }
+        
+        /*if (userTotal > computerTotal) {
             strEndResult += "Winner: User\n";
         } else if (computerTotal < userTotal) {
             strEndResult += "Winner: Computer\n";
@@ -132,6 +163,7 @@ public class testTwoPointOne extends javax.swing.JFrame {
             strEndResult += "Tie!\n";
         }
         strEndResult += "Player balance: " + Integer.toString(userTotal) + "\nComputer balance: " + Integer.toString(computerTotal);
+        */
         txtEndResult.setText(strEndResult);
     }
 
