@@ -1,7 +1,7 @@
 /*
 * modified 20200824
 * date     20200824
-* @author  Group 3 (Rebecca, Jeffery, Maximilian, Imad, Gracie)
+* @author  Group 3 (Rebecca, Jeffrey, Maximilian, Imad, Gracie)
 * @version 2.0
 * @see    Assignment 4 Culminating
 */
@@ -54,7 +54,7 @@ public class WheelOfFortune extends javax.swing.JFrame {
     }
     
     /*
-    Jeffery
+    Jeffrey
     Purpose: Shows winner in end screen
     Pre-Con: Values in userTotal and computerTotal
     Post-Con: Determines who has more money and displays winner
@@ -73,7 +73,7 @@ public class WheelOfFortune extends javax.swing.JFrame {
     }
     
     /*
-    Jeffery
+    Jeffrey
     Purpose: Hides all panels
     Pre-Con: Screens exist
     Post-Con: All panels become hidden
@@ -87,7 +87,7 @@ public class WheelOfFortune extends javax.swing.JFrame {
     }
 
     /*
-    Jeffery
+    Jeffrey
     Purpose: Generates text file as game report
     Pre-Con: Values in userTotal and computerTotal
     Post-Con: Creates XML File and stores information
@@ -1044,13 +1044,13 @@ public class WheelOfFortune extends javax.swing.JFrame {
     }//GEN-LAST:event_SubmitActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //Jeffery
+        //Jeffrey
         hideAll();
         pnlStart.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //Jeffery
+        //Jeffrey
         hideAll();
         pnlGame.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -1064,20 +1064,20 @@ public class WheelOfFortune extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitGameResultActionPerformed
 
     private void btnGenerateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateReportActionPerformed
-        //Jeffery
+        //Jeffrey
         hideAll();
         pnlGameResult.setVisible(true);
         generateReport();
     }//GEN-LAST:event_btnGenerateReportActionPerformed
 
     private void btnInstructionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstructionsActionPerformed
-        //Jeffery
+        //Jeffrey
         hideAll();
         pnlInstructions.setVisible(true);
     }//GEN-LAST:event_btnInstructionsActionPerformed
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
-        //Jeffery
+        //Jeffrey
         hideAll();
         pnlGame.setVisible(true);
     }//GEN-LAST:event_btnPlayActionPerformed
